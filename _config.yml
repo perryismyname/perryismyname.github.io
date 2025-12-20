@@ -1,12 +1,17 @@
 # Site settings
-title: Test Title cofig
-email: Test Email config
-description: Test Description > # this means to ignore newlines until "baseurl:"
+title: Perry Johnston | Portfolio Website 
+email: johnstonperry12345@gmail.com
+description: > Portfolio website for Perry Johnston featruing projects, technichal skills, expereince, and additional personal information. 
+
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
-twitter_username: Test Twitter Username
-github_username: Test Github Username
+author: Perry Johnston
+location: United States
+resume: /files/Perry_Johnston_Resume.pdf
+
+twitter_username: 
+github_username: 
 
 # Build settings
 markdown: kramdown
