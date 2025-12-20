@@ -6,9 +6,6 @@ description: > Portfolio website for Perry Johnston featruing projects, technich
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
-author: Perry Johnston
-location: United States
-resume: /files/Perry_Johnston_Resume.pdf
 
 twitter_username: 
 github_username: 
