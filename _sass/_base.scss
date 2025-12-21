@@ -196,7 +196,6 @@ header {
             }
             hr {
                 margin: 15px 0;  // REDUCED
-                margin-left: 0;  // ADDED
             }
             p {
                 font-weight: 300;
@@ -204,6 +203,8 @@ header {
                 font-size: 16px;
                 margin-bottom: 20px;  // REDUCED
                 max-width: 500px;  // ADDED
+                margin-left: auto;  // ADDED
+                margin-right: auto;  // ADDED
             }
         }
     }
