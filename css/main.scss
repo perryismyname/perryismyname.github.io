@@ -42,3 +42,30 @@ $theme-dark: #222;
         "mixins",
         "base"
 ;
+
+
+/* Header side-by-side layout */
+header .header-content-inner {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+}
+
+header .header-text {
+    flex: 1;
+    text-align: left;
+}
+
+header .header-text hr {
+    margin-left: 0;
+}
+
+header .header-image {
+    flex-shrink: 0;
+}
+
+header .header-buttons {
+    display: flex;
+    gap: 15px;
+}
