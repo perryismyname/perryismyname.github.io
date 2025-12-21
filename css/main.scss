@@ -69,3 +69,39 @@ header .header-buttons {
     display: flex;
     gap: 15px;
 }
+
+/* Fix text alignment and spacing */
+header .header-content {
+    padding: 50px 15px 50px; /* Reduce top/bottom padding */
+}
+
+header .header-content-inner {
+    margin: 0 auto; /* Center the container */
+}
+
+header .header-text h1,
+header .header-text h2,
+header .header-text p {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+header .header-text h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+header .header-text h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+header .header-text hr {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+header .header-text p {
+    margin-bottom: 20px;
+    max-width: 500px;
+}
