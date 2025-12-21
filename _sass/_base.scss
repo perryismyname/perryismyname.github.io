@@ -161,23 +161,49 @@ header {
     .header-content {
         position: relative;
         text-align: center;
-        padding: 100px 15px 100px;
+        padding: 50px 15px 50px;  // REDUCED PADDING
         width: 100%;
         .header-content-inner {
+            display: flex;  // ADDED
+            align-items: center;  // ADDED
+            gap: 50px;  // ADDED
+            max-width: 1200px;  // ADDED
+            margin: 0 auto;  // ADDED
+            
+            .header-text {  // ADDED ENTIRE BLOCK
+                flex: 1;
+                text-align: left;
+            }
+            
+            .header-image {  // ADDED ENTIRE BLOCK
+                flex-shrink: 0;
+            }
+            
+            .header-buttons {  // ADDED ENTIRE BLOCK
+                display: flex;
+                gap: 15px;
+            }
+            
             h1 {
                 font-weight: 700;
                 text-transform: uppercase;
                 margin-top: 0;
-                margin-bottom: 0;
+                margin-bottom: 10px;  // REDUCED
+            }
+            h2 {  // ADDED
+                margin-top: 0;
+                margin-bottom: 15px;
             }
             hr {
-                margin: 30px auto;
+                margin: 15px 0;  // REDUCED
+                margin-left: 0;  // ADDED
             }
             p {
                 font-weight: 300;
                 color: rgba(white, .7);
                 font-size: 16px;
-                margin-bottom: 50px;
+                margin-bottom: 20px;  // REDUCED
+                max-width: 500px;  // ADDED
             }
         }
     }
@@ -191,20 +217,13 @@ header {
             transform: translateY(-50%);
             padding: 0 50px;
             .header-content-inner {
-                max-width: 1000px;
-                margin-left: auto;
-                margin-right: auto;
                 p {
                     font-size: 18px;
-                    max-width: 80%;
-                    margin-left: auto;
-                    margin-right: auto;
                 }
             }
         }
     }
 }
-
 // Sections
 
 .section-heading {
