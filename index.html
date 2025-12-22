@@ -1,38 +1,75 @@
-<script>
-    // Log the visit and THEN redirect
-    (function() {
-        const visitData = {
-            timestamp: new Date().toLocaleString('en-US', { 
-                timeZone: 'America/Los_Angeles',
-                year: 'numeric',
-                month: '2-digit', 
-                day: '2-digit',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: true
-            }),
-            referrer: document.referrer || 'direct',
-            userAgent: navigator.userAgent
-        };
-        
-        // Send to Google Apps Script and wait for it
-        fetch('https://script.google.com/macros/s/AKfycbwaHTzJ8F30wWQoxmdaxU29Z713GIERNGS7SaU-SxF6G_eojEht_HNheBiPVJf3Kvvh/exec', {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(visitData)
-        })
-        .then(() => {
-            window.location.replace('/home');
-        })
-        .catch(() => {
-            window.location.replace('/home');
-        });
-        
-        // Failsafe: redirect after 500ms even if fetch hangs
-        setTimeout(function() {
-            window.location.replace('/home');
-        }, 500);
-    })();
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Perry Johnston</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF5F9HMMJP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NF5F9HMMJP');
+    </script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+        .loader {
+            color: white;
+            font-size: 18px;
+        }
+    </style>
+    
+    <script>
+        // Log the visit and THEN redirect
+        (function() {
+            const visitData = {
+                timestamp: new Date().toLocaleString('en-US', { 
+                    timeZone: 'America/Los_Angeles',
+                    year: 'numeric',
+                    month: '2-digit', 
+                    day: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: true
+                }),
+                referrer: document.referrer || 'direct',
+                userAgent: navigator.userAgent
+            };
+            
+            // Send to Google Apps Script and wait for it
+            fetch('https://script.google.com/macros/s/AKfycbwaHTzJ8F30wWQoxmdaxU29Z713GIERNGS7SaU-SxF6G_eojEht_HNheBiPVJf3Kvvh/exec', {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(visitData)
+            })
+            .then(() => {
+                window.location.replace('/home');
+            })
+            .catch(() => {
+                window.location.replace('/home');
+            });
+            
+            // Failsafe: redirect after 500ms even if fetch hangs
+            setTimeout(function() {
+                window.location.replace('/home');
+            }, 500);
+        })();
+    </script>
+</head>
+<body>
+    <div class="loader">Loading...</div>
+</body>
+</html>
