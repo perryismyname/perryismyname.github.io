@@ -1,48 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Perry Johnston</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #222;
-            font-family: 'Open Sans', Arial, sans-serif;
-        }
-        .loader {
-            color: white;
-            font-size: 18px;
-        }
-    </style>
-    <script>
-        // Log the visit
-        (function() {
-            const visitData = {
-                timestamp: new Date().toISOString(),
-                referrer: document.referrer || 'direct',
-                userAgent: navigator.userAgent,
-                location: window.location.href
-            };
-            
-            // Send to Google Apps Script
-            fetch(https://script.google.com/macros/s/AKfycbwaHTzJ8F30wWQoxmdaxU29Z713GIERNGS7SaU-SxF6G_eojEht_HNheBiPVJf3Kvvh/exec, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify(visitData)
-            });
-        })();
+<script>
+    // Log the visit
+    (function() {
+        const visitData = {
+            timestamp: new Date().toISOString(),
+            referrer: document.referrer || 'direct',
+            userAgent: navigator.userAgent,
+            location: window.location.href
+        };
         
-        // Redirect immediately (don't wait for tracking)
+        // Send to Google Apps Script
+        fetch(https://script.google.com/macros/s/AKfycbwaHTzJ8F30wWQoxmdaxU29Z713GIERNGS7SaU-SxF6G_eojEht_HNheBiPVJf3Kvvh/exec, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(visitData)
+        });
+    })();
+    
+    // Redirect after brief delay
+    setTimeout(function() {
         window.location.replace('/home');
-    </script>
-</head>
-<body>
-    <div class="loader">Loading...</div>
-</body>
-</html>
+    }, 100);
+</script>
