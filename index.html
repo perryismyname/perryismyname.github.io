@@ -20,22 +20,25 @@
         }
     </style>
     <script>
-        // Log the visit with timestamp
-        const visitData = {
-            timestamp: new Date().toISOString(),
-            referrer: document.referrer || 'direct',
-            userAgent: navigator.userAgent,
-            page: 'landing'
-        };
+        // Log the visit
+        (function() {
+            const visitData = {
+                timestamp: new Date().toISOString(),
+                referrer: document.referrer || 'direct',
+                userAgent: navigator.userAgent,
+                location: window.location.href
+            };
+            
+            // Send to Google Apps Script
+            fetch(https://script.google.com/macros/s/AKfycbwaHTzJ8F30wWQoxmdaxU29Z713GIERNGS7SaU-SxF6G_eojEht_HNheBiPVJf3Kvvh/exec, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(visitData)
+            });
+        })();
         
-        // Send to tracking endpoint (we'll set this up next)
-        fetch('YOUR_WEBHOOK_URL', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(visitData)
-        }).catch(err => console.log('Tracking failed'));
-        
-        // Redirect immediately
+        // Redirect immediately (don't wait for tracking)
         window.location.replace('/home');
     </script>
 </head>
