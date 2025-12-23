@@ -43,3 +43,20 @@ $theme-dark: #222;
         "base"
 ;
 
+/* Header alignment fixes */
+.header-text {
+  text-align: center;
+
+  hr {
+    margin: 20px auto;
+  }
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
