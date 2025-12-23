@@ -60,6 +60,61 @@ $theme-dark: #222;
 }
 
 
+/* Page Layout Styles */
+.page-header {
+  background-color: $theme-dark;
+  color: white;
+  padding: 100px 0 60px;
+  text-align: center;
+  
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  hr {
+    border-color: $theme-primary;
+    border-width: 3px;
+    max-width: 50px;
+    margin: 20px auto;
+  }
+  
+  .page-subtitle {
+    font-size: 18px;
+    color: rgba(white, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.page-content {
+  padding: 80px 0;
+  
+  h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: $theme-dark;
+  }
+  
+  h3 {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: $theme-primary;
+  }
+  
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+  
+  .content-section {
+    margin-bottom: 60px;
+  }
+}
 
 
 
