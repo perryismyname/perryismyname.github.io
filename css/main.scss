@@ -45,6 +45,24 @@ $theme-dark: #222;
 
 
 
+/* Header alignment fixes */
+.header-text {
+  text-align: center;
+
+  hr {
+    margin: 20px auto;
+  }
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
 
 
 
