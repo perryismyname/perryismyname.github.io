@@ -4,8 +4,8 @@
 <body id="page-top">
   {% include nav.html %}
   
-  <!-- Slim Page Header -->
-  <header class="page-header-slim">
+<!-- Slim Page Header -->
+  <header class="page-header-slim" {% if page.header_image %}style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ page.header_image }}');"{% endif %}>
     <div class="container">
       <h1>{{ page.title }}</h1>
       {% if page.descriptor %}
