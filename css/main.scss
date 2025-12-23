@@ -60,63 +60,264 @@ $theme-dark: #222;
 }
 
 
-/* Page Layout Styles */
-.page-header {
-  background-color: $theme-dark;
-  color: white;
-  padding: 100px 0 60px;
-  text-align: center;
+/* 
+***********************************************************************************
+*********************************Page Layout Start*********************************
+***********************************************************************************
+*/
+/* 1. Slim Page Header */
+.page-header-slim {
+  background-color: #f8f8f8;
+  padding: 60px 0 40px;
+  border-bottom: 1px solid #e0e0e0;
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
   
   h1 {
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 700;
+    color: $theme-dark;
+    margin: 0 0 10px 0;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    letter-spacing: 1px;
   }
   
-  hr {
-    border-color: $theme-primary;
-    border-width: 3px;
-    max-width: 50px;
-    margin: 20px auto;
+  .page-descriptor {
+    font-size: 16px;
+    color: #666;
+    margin: 0 0 20px 0;
+    font-weight: 400;
   }
   
-  .page-subtitle {
-    font-size: 18px;
-    color: rgba(white, 0.8);
-    max-width: 600px;
-    margin: 0 auto;
+  .header-divider {
+    width: 60px;
+    height: 3px;
+    background-color: $theme-primary;
+    margin: 0;
   }
 }
 
-.page-content {
-  padding: 80px 0;
+/* 2. Primary Content Column */
+.page-main {
+  padding: 60px 0 80px;
+  background-color: #fff;
   
-  h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: $theme-dark;
+  .content-column {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
+/* 3. Section Blocks */
+.content-section {
+  margin-bottom: 60px;
+  
+  &:last-child {
+    margin-bottom: 0;
   }
   
-  h3 {
+  .section-header {
     font-size: 24px;
-    margin-top: 40px;
-    margin-bottom: 20px;
+    font-weight: 700;
+    color: $theme-dark;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .section-intro {
+    font-size: 15px;
+    color: #666;
+    margin: 0 0 30px 0;
+    font-style: italic;
+  }
+}
+
+/* 4. Entry Pattern (Repeatable Items) */
+.entry {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #e8e8e8;
+  
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .entry-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $theme-dark;
+    margin: 0 0 6px 0;
+  }
+  
+  .entry-context {
+    font-size: 14px;
+    color: #888;
+    margin: 0 0 16px 0;
+    font-weight: 500;
+  }
+  
+  .entry-bullets {
+    margin: 0;
+    padding-left: 20px;
+    
+    li {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+      margin-bottom: 8px;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .entry-outcome {
+    font-size: 15px;
     color: $theme-primary;
+    margin: 16px 0 0 0;
+    font-weight: 600;
+  }
+}
+
+/* 5. Visual Separation */
+.section-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 50px 0;
+}
+
+.subtle-background {
+  background-color: #fafafa;
+  padding: 30px;
+  border-left: 3px solid $theme-primary;
+  margin: 30px 0;
+}
+
+/* 6. Secondary Content (De-emphasized) */
+.secondary-content {
+  background-color: #f8f8f8;
+  padding: 30px;
+  margin: 40px 0;
+  border-radius: 4px;
+  
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 16px 0;
+  }
+  
+  ul {
+    margin: 0;
+    padding-left: 20px;
+    
+    li {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 6px;
+    }
+  }
+  
+  .metrics {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    
+    .metric-item {
+      flex: 1;
+      min-width: 120px;
+      
+      .metric-value {
+        font-size: 24px;
+        font-weight: 700;
+        color: $theme-primary;
+        margin: 0;
+      }
+      
+      .metric-label {
+        font-size: 13px;
+        color: #888;
+        margin: 4px 0 0 0;
+      }
+    }
+  }
+}
+
+/* 7. Consistent Footer */
+.page-footer {
+  background-color: #f8f8f8;
+  padding: 40px 0;
+  border-top: 1px solid #e0e0e0;
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
   }
   
   p {
-    font-size: 16px;
-    line-height: 1.8;
-    margin-bottom: 20px;
+    font-size: 15px;
+    color: #666;
+    margin: 0;
+    text-align: center;
   }
   
-  .content-section {
-    margin-bottom: 60px;
+  a {
+    color: $theme-primary;
+    text-decoration: none;
+    font-weight: 600;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
+/* Typography Refinements */
+.page-main {
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: $theme-dark;
+    margin: 40px 0 20px 0;
+    
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #444;
+    margin: 30px 0 15px 0;
+  }
+  
+  p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #444;
+    margin: 0 0 16px 0;
+  }
+}
 
+/* 
+***********************************************************************************
+*********************************Page Layout end*********************************
+***********************************************************************************
+*/
 
 
 
