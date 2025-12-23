@@ -4,27 +4,30 @@
 <body id="page-top">
   {% include nav.html %}
   
-  <!-- Page Header -->
-  <header class="page-header">
+  <!-- Slim Page Header -->
+  <header class="page-header-slim">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h1>{{ page.title }}</h1>
-          <hr>
-          {% if page.subtitle %}
-          <p class="page-subtitle">{{ page.subtitle }}</p>
-          {% endif %}
-        </div>
-      </div>
+      <h1>{{ page.title }}</h1>
+      {% if page.descriptor %}
+      <p class="page-descriptor">{{ page.descriptor }}</p>
+      {% endif %}
+      <div class="header-divider"></div>
     </div>
   </header>
   
-  <!-- Page Content -->
-  <section class="page-content">
-    <div class="container">
+  <!-- Primary Content Column -->
+  <main class="page-main">
+    <div class="content-column">
       {{ content }}
     </div>
-  </section>
+  </main>
+  
+  <!-- Consistent Footer Prompt -->
+  <footer class="page-footer">
+    <div class="container">
+      <p>Questions about my work? <a href="mailto:{{ site.email }}">Get in touch</a> or <a href="/files/Resume_Public.pdf" download>download my resume</a>.</p>
+    </div>
+  </footer>
   
   {% include scripts.html %}
 </body>
