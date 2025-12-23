@@ -71,7 +71,7 @@ $theme-dark: #222;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 50px 0 35px;
+  padding: 50px 0 35px !important;
   border-bottom: 3px solid $theme-primary;
   position: relative;
   
