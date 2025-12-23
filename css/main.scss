@@ -54,10 +54,13 @@ $theme-dark: #222;
   display: flex;
   justify-content: center;
 }
-.header-content-inner hr {
+.header-content-inner hr,
+.header-content-inner hr.light,
+.header-content-inner hr.primary {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 
 
