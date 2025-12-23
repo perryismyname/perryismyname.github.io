@@ -43,49 +43,10 @@ $theme-dark: #222;
         "base"
 ;
 
-
-
-/* =========================
-   Header / Hero Section Fixes
-   ========================= */
-
-/* Header container text alignment */
-header .header-content {
-  position: relative;
-  text-align: center;
-  padding: 50px 15px 50px;
-  width: 100%;
-}
-
-/* Header text section */
-.header-text {
-  flex: 1;
-  text-align: center;
-
-  /* Center the subtitle divider */
-  hr {
-    width: 50px;             // match theme width
-    margin: 15px auto !important; // center horizontally, override any theme margin
-    border-color: #F05F40;   // ensure red color
-    border-width: 3px;
-  }
-}
-
-/* Center the action button */
-.header-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px; // optional spacing above the button
-}
-
-
-/* Optional: adjust spacing between h2, hr, and paragraph */
-.header-text h2 {
-  margin-bottom: 10px;
-}
-
-.header-text p {
-  margin-top: 10px;
+// correct button centering
+.header-buttons { 
+        display: flex; 
+        justify-content: center; 
 }
 
 
