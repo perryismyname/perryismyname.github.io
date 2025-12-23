@@ -54,11 +54,12 @@ $theme-dark: #222;
   display: flex;
   justify-content: center;
 }
-/* Force center the header divider (theme override) */
-header hr {
-  margin-left: auto !important;
-  margin-right: auto !important;
+
+/* Fix header divider alignment (override shorthand margin) */
+header .header-content .header-content-inner hr {
+  margin: 15px auto;
 }
+
 
 
 
