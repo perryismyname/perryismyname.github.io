@@ -15,7 +15,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    {% if page.title %}
+    <title>{{ page.title }} | Perry Johnston</title>
+    {% else %}
     <title>{{ site.title }}</title>
+    {% endif %}
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
     <!-- Custom Fonts -->
