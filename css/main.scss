@@ -54,9 +54,11 @@ $theme-dark: #222;
   }
 }
 
-.header-buttons {
-  display: flex;
-  justify-content: center;
+header .header-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
 }
 
 
