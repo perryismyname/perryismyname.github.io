@@ -73,9 +73,13 @@ header .header-buttons {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 175px 0 125px !important;
+  min-height: 300px !important;
+  padding: 80px 20px !important;
   border-bottom: 3px solid $theme-primary;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   .container {
     max-width: 800px;
