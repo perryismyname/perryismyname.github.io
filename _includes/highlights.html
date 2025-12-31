@@ -82,6 +82,17 @@
                         <p class="slide-description">Designed and fabricated a custom diode laser cutter/engraver from scratch. Assembled and configured a CNC metal mill, programming complex milling operations achieving precision tolerances of ±0.001" on aluminum and mild steel through G-code optimization.</p>
                     </div>
                 </div>
+
+                <!-- Slide 7 clone 1 -->
+                <div class="carousel-slide">
+                    <div class="slide-image">
+                        <img src="/img/highlights/airforce.jpg" alt="Air Force Top Graduate">
+                    </div>
+                    <div class="slide-content">
+                        <h3 class="slide-title">Air Force Top Graduate - Avionics Systems</h3>
+                        <p class="slide-description">Graduated as the top student in Air Force F-15 avionics technical training, earning the AETC Top Graduate Award, Flight Chief's Award, and Academic Achievement Letter of Commendation. Specialized in flight line avionics systems troubleshooting and electronics maintenance.</p>
+                    </div>
+                </div>
                 
             </div>
         </div>
@@ -300,7 +311,7 @@
 </style>
 
 <script>
-// Carousel Functionality
+// Carousel Functionality with Infinite Loop
 (function() {
     const track = document.getElementById('carouselTrack');
     const slides = document.querySelectorAll('.carousel-slide');
@@ -309,51 +320,102 @@
     const indicators = document.querySelectorAll('.indicator');
     
     let currentSlide = 0;
-    const totalSlides = slides.length;
+    const totalSlides = 6; // Actual slides (excluding clone)
     let autoRotateInterval;
     let lastInteraction = Date.now();
+    let isTransitioning = false;
     
     // Update carousel position
-    function updateCarousel() {
+    function updateCarousel(noTransition = false) {
+        if (noTransition) {
+            track.style.transition = 'none';
+        } else {
+            track.style.transition = 'transform 0.5s ease-in-out';
+        }
+        
         track.style.transform = `translateX(-${currentSlide * 100}%)`;
         
-        // Update indicators
+        // Update indicators (wrap around for display)
+        const displaySlide = currentSlide % totalSlides;
         indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === currentSlide);
+            indicator.classList.toggle('active', index === displaySlide);
         });
     }
     
-    // Next slide
+    // Next slide with infinite loop
     function nextSlide() {
-        currentSlide = (currentSlide + 1) % totalSlides;
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        currentSlide++;
         updateCarousel();
+        
+        // If we're at the clone, jump back to real first slide
+        if (currentSlide === totalSlides) {
+            setTimeout(() => {
+                currentSlide = 0;
+                updateCarousel(true); // No transition
+                isTransitioning = false;
+            }, 500); // Match transition duration
+        } else {
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        }
+        
         lastInteraction = Date.now();
     }
     
     // Previous slide
     function prevSlide() {
-        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-        updateCarousel();
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        // If at first slide, jump to clone, then transition back
+        if (currentSlide === 0) {
+            currentSlide = totalSlides;
+            updateCarousel(true); // Jump to clone instantly
+            
+            setTimeout(() => {
+                currentSlide = totalSlides - 1;
+                updateCarousel(); // Transition to last real slide
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 500);
+            }, 20);
+        } else {
+            currentSlide--;
+            updateCarousel();
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        }
+        
         lastInteraction = Date.now();
     }
-
-
     
     // Go to specific slide
     function goToSlide(index) {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
         currentSlide = index;
         updateCarousel();
+        
+        setTimeout(() => {
+            isTransitioning = false;
+        }, 500);
+        
         lastInteraction = Date.now();
     }
     
     // Auto-rotate
     function startAutoRotate() {
         autoRotateInterval = setInterval(() => {
-            // Only auto-rotate if no interaction in last 5 seconds
-            if (Date.now() - lastInteraction > 8000) {
+            if (Date.now() - lastInteraction > 5000) {
                 nextSlide();
             }
-        }, 10000); // Advance every 6 seconds
+        }, 10000);
     }
     
     // Event listeners
