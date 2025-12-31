@@ -1,0 +1,365 @@
+<!-- Notable Highlights Carousel -->
+<section id="highlights" class="highlights-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Notable Highlights</h2>
+                <hr class="primary">
+            </div>
+        </div>
+    </div>
+    
+    <div class="carousel-container">
+        <button class="carousel-arrow carousel-arrow-left" id="prevBtn">
+            <i class="fa fa-chevron-left"></i>
+        </button>
+        
+        <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+                
+                <!-- Slide 1: Air Force -->
+                <div class="carousel-slide">
+                    <div class="slide-image">
+                        <img src="/img/highlights/airforce.jpg" alt="Air Force Top Graduate">
+                    </div>
+                    <div class="slide-content">
+                        <h3 class="slide-title">Air Force Top Graduate - Avionics Systems</h3>
+                        <p class="slide-description">Graduated as the top student in Air Force F-15 avionics technical training, earning the AETC Top Graduate Award, Flight Chief's Award, and Academic Achievement Letter of Commendation. Specialized in flight line avionics systems troubleshooting and electronics maintenance.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 2: Disney on Ice -->
+                <div class="carousel-slide">
+                    <div class="slide-image">
+                        <img src="/img/highlights/disney.jpg" alt="Disney on Ice Professional Skater">
+                    </div>
+                    <div class="slide-content">
+                        <h3 class="slide-title">Professional Figure Skater - Disney on Ice</h3>
+                        <p class="slide-description">Performed as a professional figure skater with Disney on Ice for two years across international tours while completing full-time college coursework online at Oregon State University. Delivered character performances and served as live show host for audiences worldwide.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 3: OSU GPA -->
+                <div class="carousel-slide">
+                    <div class="slide-image">
+                        <img src="/img/highlights/osu.jpg" alt="Oregon State University Achievement">
+                    </div>
+                    <div class="slide-content">
+                        <h3 class="slide-title">3.86 GPA - Mechanical Engineering</h3>
+                        <p class="slide-description">Maintained a 3.86 GPA and 11 consecutive terms on the Dean's List at Oregon State University while balancing professional athletics, part-time work, and leadership responsibilities. Earned three associate degrees prior to transferring.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 4: Blood Donations -->
+                <div class="carousel-slide">
+                    <div class="slide-image">
+                        <img src="/img/highlights/blood.jpg" alt="Blood Donations">
+                    </div>
+                    <div class="slide-content">
+                        <h3 class="slide-title">120+ Life-Saving Blood Donations</h3>
+                        <p class="slide-description">Donated blood and platelets over 120 times through Bloodworks Northwest, contributing directly to critical medical treatments and emergency care. Maintained consistent donation commitment throughout high school, military service, college, and professional skating career.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 5: CAP -->
+                <div class="carousel-slide">
+                    <div class="slide-image">
+                        <img src="/img/highlights/cap.jpg" alt="Civil Air Patrol Leadership">
+                    </div>
+                    <div class="slide-content">
+                        <h3 class="slide-title">Civil Air Patrol Leadership - Cadet Major</h3>
+                        <p class="slide-description">Led Eugene Civil Air Patrol squadron as Cadet Commander for one year and Color Guard Commander for two years, achieving the rank of Cadet Major. Currently serves as 1st Lieutenant on senior member side, qualified as mission scanner, radio operator, and staff assistant for search and rescue operations across Oregon.</p>
+                    </div>
+                </div>
+                
+                <!-- Slide 6: CNC -->
+                <div class="carousel-slide">
+                    <div class="slide-image">
+                        <img src="/img/highlights/cnc.jpg" alt="Custom CNC Systems">
+                    </div>
+                    <div class="slide-content">
+                        <h3 class="slide-title">Custom CNC Manufacturing Systems</h3>
+                        <p class="slide-description">Designed, fabricated, and programmed a diode laser cutter/engraver and CNC metal mill from scratch. Mill achieves precision tolerances of ±0.001" on aluminum and mild steel through integrated G-code programming and mechanical design.</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <button class="carousel-arrow carousel-arrow-right" id="nextBtn">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+    </div>
+    
+    <div class="carousel-indicators" id="carouselIndicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+        <span class="indicator" data-slide="3"></span>
+        <span class="indicator" data-slide="4"></span>
+        <span class="indicator" data-slide="5"></span>
+    </div>
+</section>
+
+<style>
+/* Highlights Carousel Styles */
+.highlights-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.highlights-section .section-heading {
+    margin-bottom: 60px;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.slide-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slide-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.slide-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.slide-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+    margin: 0;
+}
+
+/* Carousel Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #F05F40;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.carousel-arrow:hover {
+    background-color: #e04a2a;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-arrow i {
+    color: white;
+    font-size: 20px;
+}
+
+.carousel-arrow-left {
+    left: 10px;
+}
+
+.carousel-arrow-right {
+    right: 10px;
+}
+
+/* Carousel Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator:hover {
+    background-color: #bbb;
+}
+
+.indicator.active {
+    background-color: #F05F40;
+    width: 14px;
+    height: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 0 60px;
+    }
+    
+    .carousel-arrow {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .carousel-arrow i {
+        font-size: 16px;
+    }
+    
+    .slide-image {
+        height: 300px;
+    }
+    
+    .slide-title {
+        font-size: 22px;
+    }
+    
+    .slide-description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        padding: 0 50px;
+    }
+    
+    .slide-image {
+        height: 250px;
+    }
+    
+    .slide-title {
+        font-size: 20px;
+    }
+    
+    .slide-description {
+        font-size: 14px;
+    }
+}
+</style>
+
+<script>
+// Carousel Functionality
+(function() {
+    const track = document.getElementById('carouselTrack');
+    const slides = document.querySelectorAll('.carousel-slide');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    let autoRotateInterval;
+    let lastInteraction = Date.now();
+    
+    // Update carousel position
+    function updateCarousel() {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+    }
+    
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+        lastInteraction = Date.now();
+    }
+    
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+        lastInteraction = Date.now();
+    }
+    
+    // Go to specific slide
+    function goToSlide(index) {
+        currentSlide = index;
+        updateCarousel();
+        lastInteraction = Date.now();
+    }
+    
+    // Auto-rotate
+    function startAutoRotate() {
+        autoRotateInterval = setInterval(() => {
+            // Only auto-rotate if no interaction in last 5 seconds
+            if (Date.now() - lastInteraction > 5000) {
+                nextSlide();
+            }
+        }, 6000); // Advance every 6 seconds
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+    
+    indicators.forEach(indicator => {
+        indicator.addEventListener('click', () => {
+            goToSlide(parseInt(indicator.getAttribute('data-slide')));
+        });
+    });
+    
+    // Pause auto-rotate on hover
+    const carouselContainer = document.querySelector('.carousel-container');
+    carouselContainer.addEventListener('mouseenter', () => {
+        lastInteraction = Date.now();
+    });
+    
+    // Start auto-rotate
+    startAutoRotate();
+})();
+</script>
