@@ -131,7 +131,7 @@
 
 .carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1.0s ease-in-out;
 }
 
 .carousel-slide {
@@ -336,6 +336,8 @@
         updateCarousel();
         lastInteraction = Date.now();
     }
+
+
     
     // Go to specific slide
     function goToSlide(index) {
