@@ -337,10 +337,10 @@
     function startAutoRotate() {
         autoRotateInterval = setInterval(() => {
             // Only auto-rotate if no interaction in last 5 seconds
-            if (Date.now() - lastInteraction > 5000) {
+            if (Date.now() - lastInteraction > 8000) {
                 nextSlide();
             }
-        }, 6000); // Advance every 6 seconds
+        }, 10000); // Advance every 6 seconds
     }
     
     // Event listeners
