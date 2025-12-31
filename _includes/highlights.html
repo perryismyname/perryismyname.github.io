@@ -412,7 +412,7 @@
     // Auto-rotate
     function startAutoRotate() {
         autoRotateInterval = setInterval(() => {
-            if (Date.now() - lastInteraction > 5000) {
+            if (Date.now() - lastInteraction > 9000) {
                 nextSlide();
             }
         }, 10000);
