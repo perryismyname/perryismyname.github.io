@@ -122,16 +122,12 @@ header .header-buttons {
   background-color: #fff;
   
   .content-column {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
   }
 }
 
-/* Wider content for work entries */
-.page-main .content-column.wide {
-  max-width: 1200px;
-}
 
 /* 3. Section Blocks */
 .content-section {
