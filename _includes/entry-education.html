@@ -1,0 +1,386 @@
+<!-- Education Entry Template: _includes/entry-education.html -->
+
+<div class="education-entry {% if include.featured %}featured{% endif %}">
+  
+  <div class="education-header">
+    <div class="education-main-info">
+      <h3 class="education-degree">{{ include.degree }}</h3>
+      <div class="education-institution">{{ include.institution }}</div>
+      {% if include.option %}
+      <div class="education-option">{{ include.option }}</div>
+      {% endif %}
+    </div>
+    
+    <div class="education-meta">
+      {% if include.gpa %}
+      <div class="education-gpa">
+        <span class="gpa-label">GPA:</span>
+        <span class="gpa-value">{{ include.gpa }}</span>
+      </div>
+      {% endif %}
+      {% if include.graduation %}
+      <div class="education-dates">{{ include.graduation }}</div>
+      {% endif %}
+      {% if include.dates %}
+      <div class="education-dates">{{ include.dates }}</div>
+      {% endif %}
+    </div>
+  </div>
+  
+  {% if include.highlights %}
+  <div class="education-highlights">
+    {{ include.highlights }}
+  </div>
+  {% endif %}
+  
+  {% if include.coursework %}
+  <div class="education-section">
+    <h4 class="section-label">Relevant Coursework</h4>
+    <div class="coursework-grid">
+      {{ include.coursework }}
+    </div>
+  </div>
+  {% endif %}
+  
+  {% if include.involvement %}
+  <div class="education-section">
+    <h4 class="section-label">Involvement & Projects</h4>
+    <div class="involvement-content">
+      {{ include.involvement }}
+    </div>
+  </div>
+  {% endif %}
+  
+  {% if include.detail %}
+  <div class="education-expand-trigger" onclick="toggleEducationDetail(this)">
+    <span class="expand-text"></span>
+    <i class="fa fa-chevron-down expand-icon"></i>
+  </div>
+  
+  <div class="education-detail" style="display: none;">
+    <div class="education-detail-content">
+      {{ include.detail }}
+    </div>
+  </div>
+  {% endif %}
+  
+</div>
+
+<style>
+/* Education Entry Styles */
+.education-entry {
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: #fafafa;
+  border-left: 4px solid #e0e0e0;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.education-entry:hover {
+  border-left-color: #F05F40;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.education-entry.featured {
+  background-color: #fff;
+  border-left-color: #F05F40;
+  border-left-width: 5px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Header Section */
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.education-main-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.education-degree {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.education-institution {
+  font-size: 18px;
+  color: #F05F40;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.education-option {
+  font-size: 15px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Meta Info (GPA, Dates) */
+.education-meta {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.education-gpa {
+  margin-bottom: 8px;
+}
+
+.gpa-label {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.gpa-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #F05F40;
+  margin-left: 8px;
+}
+
+.education-dates {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Highlights */
+.education-highlights {
+  padding: 16px 20px;
+  background-color: #fff5f3;
+  border-left: 3px solid #F05F40;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.education-highlights ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.education-highlights li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+.education-highlights li:last-child {
+  margin-bottom: 0;
+}
+
+/* Section Labels */
+.education-section {
+  margin-top: 20px;
+}
+
+.section-label {
+  font-size: 16px;
+  font-weight: 700;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Coursework Grid */
+.coursework-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.coursework-grid ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+.coursework-grid li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 6px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.coursework-grid li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #F05F40;
+  font-weight: 700;
+}
+
+/* Involvement */
+.involvement-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.involvement-content ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.involvement-content li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* Expand Trigger */
+.education-expand-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.education-expand-trigger:hover {
+  background-color: #F05F40;
+  border-color: #F05F40;
+}
+
+.education-expand-trigger:hover .expand-text {
+  color: white;
+}
+
+.education-expand-trigger:hover .expand-icon {
+  color: white;
+}
+
+.expand-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.expand-icon {
+  font-size: 14px;
+  color: #F05F40;
+  transition: all 0.3s ease;
+}
+
+.education-expand-trigger.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+.education-expand-trigger.expanded .expand-text::before {
+  content: 'Hide Details';
+}
+
+.education-expand-trigger:not(.expanded) .expand-text::before {
+  content: 'Show Details';
+}
+
+/* Detail Section */
+.education-detail {
+  margin-top: 20px;
+  padding: 24px;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+}
+
+.education-detail-content {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.education-detail-content p {
+  margin-bottom: 16px;
+}
+
+.education-detail-content p:last-child {
+  margin-bottom: 0;
+}
+
+.education-detail-content h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #222;
+  margin: 24px 0 12px 0;
+}
+
+.education-detail-content h4:first-child {
+  margin-top: 0;
+}
+
+.education-detail-content ul {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.education-detail-content ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .education-header {
+    flex-direction: column;
+  }
+  
+  .education-meta {
+    text-align: left;
+  }
+  
+  .education-degree {
+    font-size: 20px;
+  }
+  
+  .gpa-value {
+    font-size: 24px;
+  }
+  
+  .coursework-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+function toggleEducationDetail(trigger) {
+  const entry = trigger.parentElement;
+  const detail = entry.querySelector('.education-detail');
+  const isExpanded = detail.style.display === 'block';
+  
+  if (isExpanded) {
+    detail.style.display = 'none';
+    trigger.classList.remove('expanded');
+  } else {
+    detail.style.display = 'block';
+    trigger.classList.add('expanded');
+  }
+}
+</script>
