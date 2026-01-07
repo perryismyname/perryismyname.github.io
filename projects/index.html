@@ -64,3 +64,174 @@ header_image: /img/portfolio/3.jpg
   outcome="Ongoing project developing production engineering skills in multi-material fabrication, DFM principles, and cross-functional collaboration"
   detail=gfr_capstone_detail
 %}
+
+
+
+
+
+
+
+
+
+
+{% capture cnc_mill_detail %}
+<h4>Project Background</h4>
+<p>The DMC2 Mini is a desktop CNC mill kit designed for precision metalworking in a compact footprint. Rather than purchasing a turnkey machine, I chose to build from a kit to deeply understand every mechanical and electrical system. This hands-on assembly process taught me how linear motion systems, closed-loop servo control, spindle dynamics, and machine rigidity contribute to final part accuracy.</p>
+
+<h4>Technical Specifications</h4>
+<ul>
+  <li><strong>Working Envelope:</strong> 12" (X) × 7" (Y) × 5.5" (Z)</li>
+  <li><strong>Spindle:</strong> 3 HP (2.2kW), 24,000 RPM with ER20 collet system</li>
+  <li><strong>Motion System:</strong> Closed-loop servo motors on precision ball screws and linear rails</li>
+  <li><strong>Resolution:</strong> 0.0014mm theoretical (microstepping dependent)</li>
+  <li><strong>Achieved Tolerance:</strong> ±0.01mm on aluminum and mild steel with proper finishing passes</li>
+  <li><strong>Controller:</strong> Mach3 with custom configuration for servo tuning</li>
+  <li><strong>Features:</strong> Automatic XYZ probing, central lubrication system, 40 PSI high-pressure coolant, internal chip management</li>
+</ul>
+
+<h4>Build & Tuning Process</h4>
+<p><strong>Assembly (Weeks 1-3):</strong> Kit assembly required precise alignment of linear rails, ball screw installation, electrical wiring of closed-loop servo drives, spindle mounting, and coolant system integration. Each component's installation directly impacts final accuracy—rail misalignment or loose fasteners translate to positioning errors.</p>
+
+<p><strong>Initial Testing & Troubleshooting (Weeks 4-8):</strong> First test cuts revealed several issues: servo tuning was too aggressive (causing oscillation), spindle tramming was off (producing tapered parts), and work holding wasn't rigid enough (causing chatter). Systematic troubleshooting involved adjusting PID parameters in Mach3, re-tramming the spindle with a dial indicator, upgrading vise clamping, and experimenting with feeds/speeds for different materials.</p>
+
+<p><strong>Precision Tuning (Months 3-6):</strong> Achieving ±0.01mm tolerance required iterative refinement: backlash compensation in software, mechanical preload adjustment on ball screws, thermal management (machine warm-up cycles), tool runout minimization, and developing finishing pass strategies. Each improvement was validated through test part measurement using calipers and micrometers.</p>
+
+<h4>Materials & Applications</h4>
+<p>The DMC2 Mini excels at aluminum and mild steel, with tested success on 6061-T6 aluminum alloys, 1018 mild steel, brass, and various plastics. Typical projects include custom brackets for engineering projects, precision jigs and fixtures, replacement parts for equipment repair, prototype components for design validation, and tooling for other manufacturing processes.</p>
+
+<h4>Key Learning Outcomes</h4>
+<ul>
+  <li><strong>Machine Dynamics:</strong> How rigidity, vibration damping, and thermal stability affect machining accuracy</li>
+  <li><strong>Servo Control Systems:</strong> PID tuning, closed-loop feedback, and stall detection implementation</li>
+  <li><strong>G-Code Programming:</strong> CAM software (Fusion 360) workflow and post-processor customization for Mach3</li>
+  <li><strong>Feeds & Speeds Optimization:</strong> Balancing material removal rate, tool life, and surface finish</li>
+  <li><strong>Troubleshooting Methodology:</strong> Systematic diagnosis of mechanical vs. electrical vs. software issues</li>
+  <li><strong>Metrology:</strong> Precision measurement techniques and tolerance verification procedures</li>
+</ul>
+
+<h4>Business Application</h4>
+<p>This CNC mill serves as the primary manufacturing tool for my LLC, which focuses on precision component manufacturing and custom fabrication services. The ability to produce parts in-house enables rapid prototyping, cost-effective small-batch production, and direct control over quality and lead times.</p>
+
+<h4>Ongoing Improvements</h4>
+<p>Current enhancement projects include: integrating a fourth-axis rotary table for complex geometries, implementing tool length measurement for automatic offset compensation, upgrading to flood coolant for improved chip evacuation, and exploring LinuxCNC as an alternative controller with advanced features.</p>
+{% endcapture %}
+
+{% capture cnc_tags %}
+<span class="project-tag highlight">Featured</span>
+<span class="project-tag">Manufacturing</span>
+<span class="project-tag">CNC</span>
+<span class="project-tag">Precision Machining</span>
+{% endcapture %}
+
+{% capture cnc_gallery %}
+<div class="gallery-item">
+  <img src="/img/projects/cnc-assembly.jpg" alt="CNC Mill Assembly">
+  <div class="gallery-caption">Initial kit assembly and rail alignment</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/cnc-first-cut.jpg" alt="First Test Cut">
+  <div class="gallery-caption">First aluminum test part</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/cnc-precision-part.jpg" alt="Precision Component">
+  <div class="gallery-caption">Finished part showing ±0.01mm tolerance</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/cnc-operation.jpg" alt="Mill in Operation">
+  <div class="gallery-caption">High-pressure coolant system during operation</div>
+</div>
+{% endcapture %}
+
+{% include entry-project.html 
+  featured=true
+  image_right=true
+  title="DMC2 Mini CNC Mill - Build, Tune & Production"
+  category="Personal Manufacturing"
+  date="2023 - Present"
+  image="/img/projects/cnc-mill.jpg"
+  tags=cnc_tags
+  bullet1="Built and commissioned desktop CNC mill from kit, achieving ±0.01mm tolerance on aluminum and mild steel through systematic tuning"
+  bullet2="Mastered closed-loop servo control, PID tuning, machine tramming, and precision measurement techniques"
+  bullet3="Developed CAM workflows in Fusion 360 and optimized feeds/speeds for various materials and cutting tools"
+  bullet4="Serves as primary manufacturing tool for LLC-based precision component fabrication and prototyping services"
+  outcome="Operational precision mill capable of professional-grade work, demonstrating deep understanding of machine tool technology and manufacturing processes"
+  detail=cnc_mill_detail
+  gallery=cnc_gallery
+%}
+
+
+
+
+
+
+
+
+{% capture rube_detail %}
+<h4>Project Context</h4>
+<p>As part of Introduction to Design (ME 382), our class collaboratively designed and built a multi-stage Rube Goldberg machine where each student team contributed one subsystem. My subsystem—Step #2 in the assembly—receives input from the previous team's ball launcher and delivers output to trigger the next stage. This project required applying the complete engineering design process: problem definition, stakeholder analysis, concept generation, functional modeling, CAD development, physics-based simulation, prototyping, testing, and iterative refinement.</p>
+
+<h4>Subsystem Design: Servo-Activated Zipline Mechanism</h4>
+<p>The final design uses a servo motor to release a weighted basket that travels down a 24-inch zipline, converting potential energy into kinetic energy to trigger the next stage. The mechanism consists of:</p>
+<ul>
+  <li><strong>Input:</strong> Redirecting cone guides incoming ball onto a trigger button</li>
+  <li><strong>Actuation:</strong> Button press activates servo motor that releases basket latch</li>
+  <li><strong>Energy Transfer:</strong> 0.5 lb basket accelerates down angled zipline under gravity</li>
+  <li><strong>Output:</strong> Basket impact depresses second button, triggering next subsystem</li>
+</ul>
+
+<h4>Engineering Design Process (Four Phases)</h4>
+<p><strong>Phase 1 - Problem Definition & Stakeholder Analysis:</strong> Researched existing zipline and gravity-driven mechanisms, identified stakeholder needs (reliability, timing, safety, ease of reset), and developed measurable design requirements. Analyzed similar Rube Goldberg subsystems to understand failure modes and success factors.</p>
+
+<p><strong>Phase 2 - Concept Generation & Selection:</strong> Generated multiple design alternatives through functional decomposition and morphological analysis. Compared concepts using a decision matrix weighted by stakeholder priorities. Developed House of Quality to link customer needs to engineering specifications. Selected servo-activated zipline for optimal balance of reliability, controllability, and mechanical simplicity.</p>
+
+<p><strong>Phase 3 - Detailed Design & Validation:</strong> Created full CAD assembly in SolidWorks with motion studies to verify clearances and travel paths. Performed physics calculations to determine required zipline angle, basket mass, and release height for consistent triggering. Built physical prototype and conducted iterative testing to validate simulations and refine trigger sensitivity.</p>
+
+<p><strong>Phase 4 - Testing, Evaluation & Reflection:</strong> Collected quantitative performance data across multiple test runs. Analyzed failure modes and success rates. Gathered peer feedback and expert evaluation. Documented lessons learned and provided specific recommendations for future design improvements.</p>
+
+<h4>Technical Challenges & Solutions</h4>
+<p><strong>Timing Consistency:</strong> Initial tests showed high variability in basket travel time due to friction inconsistencies. Solution: Added Teflon washers to zipline contact points and implemented consistent basket loading procedure.</p>
+
+<p><strong>Trigger Reliability:</strong> Ball occasionally missed input cone due to positional variation from previous subsystem. Solution: Enlarged cone opening and added alignment guides to increase capture tolerance.</p>
+
+<p><strong>System Integration:</strong> Coordinating with adjacent teams required careful dimensional control and communication. Solution: Established interface control documents specifying input/output positions, trigger forces, and timing windows.</p>
+
+<h4>Skills Developed</h4>
+<ul>
+  <li>Structured engineering design methodology from problem definition through validation</li>
+  <li>Stakeholder analysis and requirements development</li>
+  <li>Concept generation techniques (functional decomposition, morphological charts)</li>
+  <li>Decision-making frameworks (decision matrices, House of Quality)</li>
+  <li>CAD modeling and motion simulation for design validation</li>
+  <li>Physics-based analysis of mechanical systems (kinematics, energy transfer)</li>
+  <li>Prototyping and iterative testing procedures</li>
+  <li>Technical documentation and portfolio development</li>
+  <li>Cross-functional teamwork and interface management</li>
+</ul>
+
+<h4>Project Documentation</h4>
+<p>Complete project documentation—including problem definition, research, concept generation, CAD models, physics calculations, simulation results, test data, and reflection—is available on a dedicated Google Sites portfolio (15,000+ words across 5 pages). This comprehensive documentation demonstrates engineering rigor, systematic analysis, and clear technical communication.</p>
+{% endcapture %}
+
+{% capture rube_tags %}
+<span class="project-tag highlight">Featured</span>
+<span class="project-tag">Academic</span>
+<span class="project-tag">Team Project</span>
+<span class="project-tag">Design Process</span>
+{% endcapture %}
+
+{% include entry-project.html 
+  featured=true
+  title="Rube Goldberg Subsystem - Servo-Activated Zipline"
+  category="Academic Design Project"
+  date="Fall 2024"
+  team="ME 382 - Introduction to Design"
+  image="/img/projects/rube-goldberg.jpg"
+  tags=rube_tags
+  link="https://sites.google.com/view/perry-johnston-me-382/overview"
+  bullet1="Designed and fabricated servo-activated zipline mechanism as Step #2 in class-wide Rube Goldberg assembly"
+  bullet2="Applied complete engineering design process: stakeholder analysis, concept generation, CAD modeling, physics simulation, and iterative testing"
+  bullet3="Coordinated interface specifications with adjacent teams to ensure reliable triggering and system integration"
+  bullet4="Documented entire design journey in 15,000+ word technical portfolio covering all four project phases"
+  outcome="Reliable subsystem with 95%+ success rate in final assembly demonstrations, showcasing systematic design methodology and cross-functional collaboration"
+  detail=rube_detail
+%}
