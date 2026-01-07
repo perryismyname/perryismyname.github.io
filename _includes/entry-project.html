@@ -1,0 +1,456 @@
+<!-- Project Entry Template: _includes/entry-project.html -->
+
+<div class="project-entry {% if include.featured %}featured{% endif %} {% if include.image_right %}image-right{% endif %}">
+  
+  <div class="project-entry-main">
+    <!-- Content Area -->
+    <div class="project-entry-content">
+      <div class="project-entry-header">
+        <h3 class="project-title">{{ include.title }}</h3>
+        <div class="project-meta">
+          {% if include.category %}<span class="project-category">{{ include.category }}</span>{% endif %}
+          {% if include.date %}<span class="project-divider">|</span><span class="project-date">{{ include.date }}</span>{% endif %}
+          {% if include.team %}<span class="project-divider">|</span><span class="project-team">{{ include.team }}</span>{% endif %}
+        </div>
+        {% if include.tags %}
+        <div class="project-tags">
+          {{ include.tags }}
+        </div>
+        {% endif %}
+      </div>
+      
+      <ul class="project-bullets">
+        {% if include.bullet1 %}<li>{{ include.bullet1 }}</li>{% endif %}
+        {% if include.bullet2 %}<li>{{ include.bullet2 }}</li>{% endif %}
+        {% if include.bullet3 %}<li>{{ include.bullet3 }}</li>{% endif %}
+        {% if include.bullet4 %}<li>{{ include.bullet4 }}</li>{% endif %}
+        {% if include.bullet5 %}<li>{{ include.bullet5 }}</li>{% endif %}
+        {% if include.bullet6 %}<li>{{ include.bullet6 }}</li>{% endif %}
+      </ul>
+      
+      {% if include.outcome %}
+      <div class="project-outcome">
+        <strong>Result:</strong> {{ include.outcome }}
+      </div>
+      {% endif %}
+      
+      {% if include.link %}
+      <div class="project-link">
+        <a href="{{ include.link }}" target="_blank" class="external-link">
+          <i class="fa fa-external-link"></i> View Full Project Documentation
+        </a>
+      </div>
+      {% endif %}
+    </div>
+    
+    <!-- Main Image -->
+    {% if include.image %}
+    <div class="project-entry-image">
+      <img src="{{ include.image }}" alt="{{ include.title }}">
+    </div>
+    {% endif %}
+  </div>
+  
+  <!-- Expandable Detail Section -->
+  {% if include.detail %}
+  <div class="project-expand-trigger" onclick="toggleProjectDetail(this)">
+    <span class="expand-text"></span>
+    <i class="fa fa-chevron-down expand-icon"></i>
+  </div>
+  
+  <div class="project-detail" style="display: none;">
+    <div class="project-detail-content">
+      {{ include.detail }}
+      
+      {% if include.gallery %}
+      <div class="project-gallery">
+        <h4>Project Gallery</h4>
+        <div class="gallery-grid">
+          {{ include.gallery }}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+  
+</div>
+
+<style>
+/* Project Entry Styles */
+.project-entry {
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.project-entry:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.project-entry.featured {
+  background-color: #fafafa;
+  padding: 30px;
+  border-radius: 8px;
+  border: 2px solid #F05F40;
+  margin-bottom: 70px;
+}
+
+.project-entry-main {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* Default: Content Left, Image Right */
+.project-entry-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-entry-image {
+  flex: 0 0 400px;
+  width: 400px;
+}
+
+/* Alternate: Image Left, Content Right */
+.project-entry.image-right .project-entry-main {
+  flex-direction: row-reverse;
+}
+
+.project-entry-image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Header */
+.project-entry-header {
+  margin-bottom: 16px;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.project-meta {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.project-category {
+  color: #F05F40;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+}
+
+.project-divider {
+  margin: 0 8px;
+  color: #999;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 4px 10px;
+  background-color: #e8e8e8;
+  color: #555;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.project-tag.highlight {
+  background-color: #F05F40;
+  color: white;
+}
+
+/* Bullets */
+.project-bullets {
+  margin: 0 0 20px 0;
+  padding-left: 24px;
+  list-style-type: disc;
+}
+
+.project-bullets li {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.project-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+/* Outcome */
+.project-outcome {
+  font-size: 15px;
+  color: #F05F40;
+  font-weight: 600;
+  padding: 12px 16px;
+  background-color: #fff5f3;
+  border-left: 3px solid #F05F40;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+/* External Link */
+.project-link {
+  margin-top: 16px;
+}
+
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background-color: #F05F40;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.external-link:hover {
+  background-color: #e04a2a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(240,95,64,0.3);
+}
+
+/* Expand Trigger */
+.project-expand-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.project-expand-trigger:hover {
+  background-color: #F05F40;
+  border-color: #F05F40;
+}
+
+.project-expand-trigger:hover .expand-text {
+  color: white;
+}
+
+.project-expand-trigger:hover .expand-icon {
+  color: white;
+}
+
+.expand-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.expand-icon {
+  font-size: 14px;
+  color: #F05F40;
+  transition: all 0.3s ease;
+}
+
+.project-expand-trigger.expanded .expand-icon {
+  transform: rotate(180deg);
+}
+
+.project-expand-trigger.expanded .expand-text::before {
+  content: 'Hide Details';
+}
+
+.project-expand-trigger:not(.expanded) .expand-text::before {
+  content: 'Show Details';
+}
+
+/* Detail Section */
+.project-detail {
+  margin-top: 20px;
+  padding: 30px;
+  background-color: #fafafa;
+  border-radius: 6px;
+  border: 1px solid #e8e8e8;
+}
+
+.project-detail-content {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.project-detail-content p {
+  margin-bottom: 16px;
+}
+
+.project-detail-content p:last-child {
+  margin-bottom: 0;
+}
+
+.project-detail-content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #222;
+  margin: 30px 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.project-detail-content h4:first-child {
+  margin-top: 0;
+}
+
+.project-detail-content ul {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.project-detail-content ul li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* Project Gallery */
+.project-gallery {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.project-gallery h4 {
+  margin-top: 0 !important;
+  border-bottom: none !important;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+  padding: 30px 12px 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .project-entry-main {
+    flex-direction: column !important;
+  }
+  
+  .project-entry-image {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .project-entry-image img {
+    height: 280px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .project-title {
+    font-size: 20px;
+  }
+  
+  .project-meta {
+    font-size: 13px;
+  }
+  
+  .project-bullets li {
+    font-size: 14px;
+  }
+  
+  .project-entry-image img {
+    height: 250px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<script>
+function toggleProjectDetail(trigger) {
+  const entry = trigger.parentElement;
+  const detail = entry.querySelector('.project-detail');
+  const isExpanded = detail.style.display === 'block';
+  
+  if (isExpanded) {
+    detail.style.display = 'none';
+    trigger.classList.remove('expanded');
+  } else {
+    detail.style.display = 'block';
+    trigger.classList.add('expanded');
+  }
+}
+</script>
