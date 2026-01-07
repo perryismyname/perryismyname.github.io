@@ -235,3 +235,106 @@ header_image: /img/portfolio/3.jpg
   outcome="Reliable subsystem with 95%+ success rate in final assembly demonstrations, showcasing systematic design methodology and cross-functional collaboration"
   detail=rube_detail
 %}
+
+
+
+
+{% capture blinds_detail %}
+<h4>Project Motivation</h4>
+<p>This project originated from a practical frustration: streetlights and car headlights disrupting sleep, combined with difficulty waking naturally to daylight. Rather than purchasing a commercial smart blind system, I designed a custom solution that integrated multiple sensors, control modes, and user interfaces to provide flexible automation tailored to my specific needs. This project demonstrates how embedded systems can solve real-world problems through thoughtful hardware integration and control logic design.</p>
+
+<h4>System Architecture</h4>
+<p>The automated blackout blind system uses an Arduino microcontroller to coordinate multiple subsystems:</p>
+<ul>
+  <li><strong>Mechanical System:</strong> Blackout curtains mounted in 20×20 aluminum extrusion track (creates light-tight seal), stepper motor with custom axle assembly for wrapping curtains (functions like vertical industrial garage door), limit switch for position initialization and overtravel protection</li>
+  <li><strong>Sensor Inputs:</strong> Photoresistor for ambient light measurement, limit switch with hardware debouncing for homing and safety, infrared receiver for wireless remote control</li>
+  <li><strong>User Interface:</strong> LCD display showing current mode, position, and status, IR remote for mode selection and manual positioning, ATC timer module for alarm clock functionality</li>
+  <li><strong>Control Logic:</strong> Three distinct operation modes with state machine implementation, position tracking relative to initialized home position, moving average filter (5 samples) for photoresistor noise reduction, command deadband to prevent oscillation</li>
+</ul>
+
+<h4>Operation Modes</h4>
+<p><strong>Mode 1 - Automatic Light Tracking:</strong> Curtain position automatically adjusts based on ambient external light conditions. As daylight increases, blinds gradually open; as darkness falls, they close. This mode uses filtered photoresistor data with a command deadband to prevent unnecessary motor movement from minor light fluctuations (passing clouds, transient shadows).</p>
+
+<p><strong>Mode 2 - Sunrise Alarm Clock:</strong> User sets desired wake time via IR remote. At the programmed time, curtains begin slowly rising over a 15-30 minute period, allowing natural sunlight to gradually increase bedroom brightness. This simulates natural dawn and provides gentler waking than traditional audio alarms. The slow ramp rate is achieved through timed stepper motor steps with extended pauses between position updates.</p>
+
+<p><strong>Mode 3 - Manual Control:</strong> Direct positioning via IR remote. User can command specific positions, full open, or full closed. Useful when automatic modes don't match immediate needs (e.g., midday nap, projector use, temperature control). Position commands are constrained by software limits derived from initial homing sequence.</p>
+
+<h4>Technical Challenges & Solutions</h4>
+<p><strong>Signal Conditioning - Photoresistor Noise:</strong> Raw photoresistor readings exhibited significant noise that caused erratic curtain behavior. Implemented moving average filter (5-point window) to smooth data while maintaining responsiveness to actual lighting changes. Added command deadband (±2% position tolerance) to prevent oscillation from small fluctuations around target position.</p>
+
+<p><strong>Mechanical Reliability - Limit Switch Debouncing:</strong> Initial tests showed false triggers from limit switch bounce during motor vibration. Implemented software debouncing (50ms confirmation window) and added hardware RC filter to eliminate spurious signals. This ensured accurate homing without requiring motor shutdown during normal operation.</p>
+
+<p><strong>Critical Debugging - IR/LCD Interference:</strong> Most challenging issue: LCD display exhibited constant flickering, garbled text, and severe lag whenever IR receiver was active, despite both subsystems working independently. After extensive troubleshooting (checking wiring, testing alternate pins, reviewing timing diagrams), discovered IR library was using `LED_BUILTIN` (pin 13) for undocumented status updates. This pin shared a timer resource with LCD refresh routines, creating interrupt conflicts. Disabling the hidden IR feedback resolved the issue completely—a lesson in reading library source code when documentation is incomplete.</p>
+
+<p><strong>Position Tracking Without Encoders:</strong> System tracks curtain position by counting stepper motor steps from initialized home position (limit switch). Requires homing sequence on startup and careful tracking of commanded vs. actual steps. Software limits prevent overtravel in both directions, with limit switch serving as fail-safe backup.</p>
+
+<h4>Information Processing Focus</h4>
+<p>As a project for Instrumentation and Measurement Systems, emphasis was placed on sensor signal conditioning and data processing:</p>
+<ul>
+  <li>Photoresistor filtering (moving average, deadband logic)</li>
+  <li>Limit switch debouncing (hardware + software)</li>
+  <li>LCD refresh rate optimization (minimizing flicker, managing update frequency)</li>
+  <li>IR receiver data validation (checksum verification, conflict resolution)</li>
+  <li>State machine implementation for mode switching and command prioritization</li>
+</ul>
+
+<h4>Skills Demonstrated</h4>
+<ul>
+  <li><strong>Embedded Systems Design:</strong> Arduino programming, peripheral integration, interrupt handling</li>
+  <li><strong>Sensor Signal Processing:</strong> Filtering, conditioning, noise rejection strategies</li>
+  <li><strong>Control Systems:</strong> State machines, position tracking, PID-like control with deadband</li>
+  <li><strong>Mechanical Design:</strong> Curtain mounting system, motor coupling, light sealing</li>
+  <li><strong>User Interface Design:</strong> Mode selection logic, LCD status displays, remote control mapping</li>
+  <li><strong>Systematic Debugging:</strong> Isolating complex multi-system interactions through methodical testing</li>
+  <li><strong>Technical Communication:</strong> Produced 2-minute demonstration video showcasing functionality</li>
+</ul>
+
+<h4>Results & Practical Application</h4>
+<p>System has been in daily operation for over a year with high reliability. Sunrise alarm mode successfully replaces traditional audio alarms with gentler, more natural waking. Automatic light tracking maintains desired bedroom darkness during evening hours while allowing daylight entry during day. Manual mode provides override capability for specific needs. The project successfully solved the original problem while providing valuable experience in multi-sensor integration and embedded control logic.</p>
+
+<h4>Future Enhancements</h4>
+<p>Potential improvements include: Wi-Fi connectivity for smartphone control and scheduling, integration with smart home platforms (Home Assistant, Google Home), rotary encoder addition for closed-loop position feedback, motorized tension adjustment to prevent fabric sagging, and weather API integration for predictive light-based control.</p>
+{% endcapture %}
+
+{% capture blinds_tags %}
+<span class="project-tag">Academic</span>
+<span class="project-tag">Arduino</span>
+<span class="project-tag">Embedded Systems</span>
+<span class="project-tag">Control Logic</span>
+{% endcapture %}
+
+{% capture blinds_gallery %}
+<div class="gallery-item">
+  <img src="/img/projects/blinds-closed.jpg" alt="Blinds Fully Closed">
+  <div class="gallery-caption">System in closed position with light-sealed track</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/blinds-electronics.jpg" alt="Control Electronics">
+  <div class="gallery-caption">Arduino, LCD, IR receiver, and motor driver assembly</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/blinds-mechanism.jpg" alt="Motor and Axle System">
+  <div class="gallery-caption">Stepper motor with custom curtain wrapping mechanism</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/blinds-remote.jpg" alt="IR Remote Control">
+  <div class="gallery-caption">Remote interface for mode selection and positioning</div>
+</div>
+{% endcapture %}
+
+{% include entry-project.html 
+  title="Automatic Blackout Blind System"
+  category="Academic Project"
+  date="Winter 2024"
+  team="ME 4XX - Instrumentation & Measurement Systems"
+  image="/img/projects/window-blinds.jpg"
+  tags=blinds_tags
+  link="https://www.youtube.com/watch?v=EEh0CoQmo_o"
+  bullet1="Designed and built automated blackout curtain system with three operation modes: light-tracking, sunrise alarm, and manual control"
+  bullet2="Integrated stepper motor, photoresistor, limit switch, LCD display, IR remote, and Arduino control logic into cohesive system"
+  bullet3="Implemented signal conditioning techniques: moving average filtering, debouncing, command deadbands, and refresh rate optimization"
+  bullet4="Debugged critical IR receiver/LCD interference through systematic isolation and library source code analysis"
+  outcome="Fully operational daily-use system demonstrating embedded systems integration, sensor processing, and practical problem-solving"
+  detail=blinds_detail
+  gallery=blinds_gallery
+%}
