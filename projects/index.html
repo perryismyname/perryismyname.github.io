@@ -5,6 +5,62 @@ descriptor: Design and manufacturing projects spanning academic, personal, and e
 header_image: /img/portfolio/3.jpg
 ---
 
-<div class="content-section">
-  <p style="text-align: center; font-size: 18px; color: #666;">This page is under construction. Check back soon!</p>
-</div>
+{% capture gfr_capstone_detail %}
+<h4>Project Overview</h4>
+<p>My senior capstone project represents the culmination of my involvement with Global Formula Racing's powertrain team. Rather than pursuing a traditional classroom-based capstone, I chose to embed myself in GFR's manufacturing and testing workflow to gain real-world production engineering experience. This project bridges academic theory with hands-on manufacturing, quality control, and system integration.</p>
+
+<h4>Scope & Responsibilities</h4>
+<p>My role encompasses the complete production cycle for formula car components:</p>
+<ul>
+  <li>Receive CAD models from the design team (both OSU and DHBW Germany)</li>
+  <li>Evaluate designs for manufacturability and recommend modifications to reduce cost or improve fabrication feasibility</li>
+  <li>Manufacture components using composites, metals, and electronics assembly techniques</li>
+  <li>Conduct quality inspections and dimensional verification against engineering drawings</li>
+  <li>Install components on the vehicle and integrate with existing systems</li>
+  <li>Participate in vehicle testing to validate performance and identify failure modes</li>
+</ul>
+
+<h4>Technical Challenges</h4>
+<p><strong>Design for Manufacturing:</strong> Formula SAE designs prioritize performance and weight reduction, sometimes at the expense of manufacturability. My role involves identifying where tolerances can be relaxed, materials substituted, or geometries simplified without compromising function. This requires understanding both the design intent and the limitations of available manufacturing processes.</p>
+
+<p><strong>Multi-Material Fabrication:</strong> Projects span composites layup (carbon fiber, fiberglass), precision metal machining (aluminum brackets, steel fasteners), and electronics assembly (wiring harnesses, sensor integration). Each material system demands different skills, tooling, and quality control methods.</p>
+
+<p><strong>International Collaboration:</strong> Working with DHBW Germany introduces logistical complexity—parts designed overseas must be manufacturable with OSU's equipment, and communication across time zones requires clear documentation and proactive problem-solving.</p>
+
+<h4>Learning Objectives</h4>
+<p>This capstone develops skills directly applicable to production engineering roles:</p>
+<ul>
+  <li>Design for Manufacturing (DFM) principles and cost-conscious engineering decisions</li>
+  <li>Multi-process manufacturing (composites, machining, assembly)</li>
+  <li>Quality assurance and inspection procedures</li>
+  <li>System integration and troubleshooting in complex electromechanical systems</li>
+  <li>Cross-functional communication with designers, testers, and international partners</li>
+  <li>Project documentation and engineering change management</li>
+</ul>
+
+<h4>Current Status</h4>
+<p>Project is ongoing through Winter and Spring 2026 terms. Specific components, test results, and final deliverables will be added as work progresses. Anticipated focus areas include battery enclosure manufacturing, powertrain cooling system fabrication, and high-voltage wiring harness assembly.</p>
+{% endcapture %}
+
+{% capture gfr_tags %}
+<span class="project-tag highlight">Featured</span>
+<span class="project-tag">Senior Capstone</span>
+<span class="project-tag">Manufacturing</span>
+<span class="project-tag">Formula SAE</span>
+{% endcapture %}
+
+{% include entry-project.html 
+  featured=true
+  title="GFR Manufacturing & Testing - Senior Capstone Project"
+  category="Senior Design"
+  date="September 2025 - June 2026"
+  team="Global Formula Racing Powertrain Team"
+  image="/img/projects/gfr-capstone.jpg"
+  tags=gfr_tags
+  bullet1="Serve as manufacturing engineer for Global Formula Racing's electric formula car, translating CAD designs into fabricated components"
+  bullet2="Evaluate designs for manufacturability and recommend cost-effective modifications without compromising performance"
+  bullet3="Manufacture components using composites (carbon fiber), precision machining, and electronics assembly techniques"
+  bullet4="Conduct quality inspections, install components on vehicle, and participate in performance testing and validation"
+  outcome="Ongoing project developing production engineering skills in multi-material fabrication, DFM principles, and cross-functional collaboration"
+  detail=gfr_capstone_detail
+%}
