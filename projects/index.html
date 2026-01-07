@@ -338,3 +338,118 @@ header_image: /img/portfolio/3.jpg
   detail=blinds_detail
   gallery=blinds_gallery
 %}
+
+
+
+{% capture laser_detail %}
+<h4>Project Overview</h4>
+<p>This project represents two complete design iterations of a large-format diode laser cutter/engraver, progressing from an initial prototype with significant limitations to a refined, production-capable machine. The journey from v1 to v2 demonstrates systematic troubleshooting, willingness to redesign fundamentally flawed systems, and application of lessons learned through failure. The final 3'×3' working envelope provides practical manufacturing capability for signage, detailed engraving, and precision cutting.</p>
+
+<h4>Version 1 - Initial Design & Lessons Learned</h4>
+<p><strong>Design Approach:</strong> First iteration emphasized cost minimization and accessibility—all structural components were either 3D printed from custom-designed models or sourced from hardware stores. Linear motion used threaded rod (all-thread from Lowe's) as lead screws with smooth dowel guide rails. Electronics used standard 4-conductor wire throughout. Custom Arduino code written from scratch to handle motion control and laser modulation.</p>
+
+<p><strong>Critical Issues Identified:</strong></p>
+<ul>
+  <li><strong>Mechanical Limitations:</strong> Threaded rod drive exhibited excessive friction, vibration during rapid movements, and backlash that prevented precise positioning. Smooth dowels as guide rails lacked rigidity and introduced flex under carriage weight. Overall accuracy was insufficient for detailed work.</li>
+  <li><strong>Electrical Interference:</strong> Standard 4-wire cabling created severe EMI issues—false limit switch triggers occurred frequently, stepper motors exhibited erratic movement, and laser power modulation was unstable. Lack of shielding allowed motor noise to corrupt sensor signals.</li>
+  <li><strong>Software Complexity:</strong> Custom motion control code became increasingly difficult to debug and optimize. Implementing acceleration profiles, coordinated multi-axis movement, and G-code parsing from scratch revealed the complexity of mature CNC control software.</li>
+  <li><strong>Limit Switch Configuration:</strong> Normally-closed limit switches created constant false triggers from electrical noise, requiring extensive software filtering that introduced latency and unreliability.</li>
+</ul>
+
+<p><strong>Key Learning:</strong> Sometimes incremental fixes aren't enough—fundamental design choices (screw drive, unshielded wiring, custom software) required complete redesign rather than continued troubleshooting. Recognizing when to start over is a critical engineering skill.</p>
+
+<h4>Version 2 - Systematic Redesign</h4>
+<p><strong>Motion System Overhaul:</strong> Replaced threaded rod drives with GT2 timing belt systems. Belts provide smooth, backlash-free motion with minimal friction—ideal for applications without cutting forces (diode laser). Redesigned gantry to use sliding wheel carriages on aluminum extrusion rails, dramatically improving rigidity and precision. New system achieves repeatable positioning well under 1mm, suitable for detailed engraving and accurate cutting.</p>
+
+<p><strong>Electrical System Redesign:</strong> Complete rewiring using shielded cables for all stepper motors, limit switches, and laser control lines. Shields grounded at controller enclosure to drain EMI away from signal conductors. Limit switches reconfigured as normally-open to eliminate false triggers from noise (open circuit can't generate false signal). Power and signal grounds properly separated to prevent ground loops.</p>
+
+<p><strong>Software Migration:</strong> Abandoned custom code in favor of proven Laser GRBL firmware. GRBL provides mature motion planning, acceleration control, and G-code interpretation with decades of community development and debugging. Paired with LightBurn software for CAM workflow—handles image processing, path generation, and material-specific settings. This combination provides professional-grade control without reinventing foundational CNC software.</p>
+
+<p><strong>Electronics Enclosure:</strong> Custom-designed enclosure houses Arduino CNC shield, stepper drivers, power supply, and active cooling system (fan with filtered intake). Enclosure mounts directly to machine frame with quick-disconnect connectors for all external cables (laser module, limit switches, stepper motors). Includes wall power input and USB connection for laptop control. Organized cable management prevents tangling and provides clean, maintainable system.</p>
+
+<h4>Technical Specifications (v2)</h4>
+<ul>
+  <li><strong>Working Envelope:</strong> 36" × 36" (3' × 3')</li>
+  <li><strong>Laser Module:</strong> Diode laser (specify wattage if known) with PWM power control</li>
+  <li><strong>Motion System:</strong> GT2 belt drive on aluminum extrusion frame with V-wheel carriages</li>
+  <li><strong>Controller:</strong> Arduino with CNC shield running Laser GRBL firmware</li>
+  <li><strong>CAM Software:</strong> LightBurn for design, path planning, and machine control</li>
+  <li><strong>Connectivity:</strong> USB to laptop, shielded cabling throughout</li>
+  <li><strong>Safety:</strong> Limit switches (normally-open), emergency stop integration, laser interlock capability</li>
+</ul>
+
+<h4>Applications & Capabilities</h4>
+<p><strong>Detailed Engraving:</strong> Photographs, logos, and fine artwork on wood, leather, acrylic, and coated metals. Capable of reproducing grayscale images through power modulation and dithering algorithms in LightBurn.</p>
+
+<p><strong>Precision Cutting:</strong> Through-cuts on materials like cardboard, thin plywood, acrylic sheet, and fabric. Large working envelope enables signage, architectural models, and custom packaging prototypes.</p>
+
+<p><strong>Production Work:</strong> Small-batch manufacturing for custom products—engraved gifts, branded merchandise, prototype parts. Repeatability and automation enable consistent multi-piece production runs.</p>
+
+<h4>Skills Demonstrated</h4>
+<ul>
+  <li><strong>Iterative Design Methodology:</strong> Recognizing fundamental vs. fixable flaws, knowing when to redesign vs. debug</li>
+  <li><strong>Mechanical Systems:</strong> Belt vs. screw drive trade-offs, linear motion design, structural rigidity analysis</li>
+  <li><strong>Electrical Design:</strong> EMI mitigation through shielding and grounding, sensor configuration (NO vs. NC switches)</li>
+  <li><strong>Embedded Systems:</strong> Microcontroller programming, firmware selection, motion control fundamentals</li>
+  <li><strong>CAD Design:</strong> Custom 3D printed components, enclosure design, cable management</li>
+  <li><strong>CAM Workflow:</strong> Image processing, toolpath generation, material parameter optimization</li>
+  <li><strong>Troubleshooting:</strong> Systematic diagnosis of multi-domain issues (mechanical/electrical/software)</li>
+  <li><strong>Learning from Failure:</strong> Extracting lessons from v1 shortcomings to inform v2 success</li>
+</ul>
+
+<h4>Current Status & Future Work</h4>
+<p>Version 2 is fully operational and used regularly for personal projects and small production runs. System demonstrates reliable performance with minimal maintenance requirements. Future enhancements under consideration include: rotary axis for cylindrical engraving (tumblers, pens), camera system for automatic workpiece alignment, air assist for improved cutting and smoke removal, and enclosure with fume extraction for indoor operation safety.</p>
+
+<h4>Business Application</h4>
+<p>This laser cutter serves as a key manufacturing tool for my LLC, enabling rapid prototyping, custom fabrication services, and small-batch production without outsourcing. The ability to go from digital design to physical part in minutes provides significant competitive advantage in responsiveness and cost control.</p>
+{% endcapture %}
+
+{% capture laser_tags %}
+<span class="project-tag">Personal Manufacturing</span>
+<span class="project-tag">Iterative Design</span>
+<span class="project-tag">CNC</span>
+<span class="project-tag">Electronics</span>
+{% endcapture %}
+
+{% capture laser_gallery %}
+<div class="gallery-item">
+  <img src="/img/projects/laser-v1.jpg" alt="Version 1 Prototype">
+  <div class="gallery-caption">V1: Threaded rod drive with 3D printed components</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/laser-v2-frame.jpg" alt="Version 2 Frame">
+  <div class="gallery-caption">V2: Belt drive system on aluminum extrusion</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/laser-enclosure.jpg" alt="Electronics Enclosure">
+  <div class="gallery-caption">Custom electronics enclosure with cooling and cable management</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/laser-engraving.jpg" alt="Engraving Sample">
+  <div class="gallery-caption">Detailed photo engraving demonstrating precision</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/laser-cutting.jpg" alt="Cutting Operation">
+  <div class="gallery-caption">Through-cutting operation on large-format signage</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/projects/laser-finished-parts.jpg" alt="Finished Products">
+  <div class="gallery-caption">Examples of cut and engraved products</div>
+</div>
+{% endcapture %}
+
+{% include entry-project.html 
+  image_right=true
+  title="3'×3' Diode Laser Cutter/Engraver - V1 & V2"
+  category="Personal Manufacturing"
+  date="2022 - 2024"
+  image="/img/projects/laser-cutter-main.jpg"
+  tags=laser_tags
+  bullet1="Designed and built large-format laser cutter through two complete iterations, learning from v1 mechanical and electrical failures to inform v2 success"
+  bullet2="V1 used custom 3D printed components, threaded rod drives, and hand-coded control software—identified fundamental design limitations requiring complete redesign"
+  bullet3="V2 implemented belt drive motion system, shielded wiring, normally-open limit switches, and professional GRBL/LightBurn software stack"
+  bullet4="Operational 36\"×36\" laser system capable of detailed engraving and precision cutting for personal projects and LLC manufacturing"
+  outcome="Functional production tool demonstrating iterative design methodology, systematic troubleshooting, and willingness to redesign rather than incrementally fix flawed systems"
+  detail=laser_detail
+  gallery=laser_gallery
+%}
