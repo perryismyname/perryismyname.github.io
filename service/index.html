@@ -6,6 +6,109 @@ header_image: /img/portfolio/4.jpg
 background_position: center 50%
 ---
 
-<div class="content-section">
-  <p style="text-align: center; font-size: 18px; color: #666;">This page is under construction. Check back soon!</p>
+{% capture cap_detail %}
+<h4>Cadet Leadership Journey (High School - Age 21)</h4>
+<p>Joined Civil Air Patrol as a high school junior with no prior military or aviation experience. Over five years, progressed through all cadet ranks to achieve Cadet Major—one of the highest enlisted cadet grades. This advancement required mastering aerospace education, leadership theory, physical fitness standards, and demonstrating increasing responsibility in squadron operations.</p>
+
+<h4>Technical Development Roles</h4>
+<p>Served in multiple specialized staff positions as part of CAP's technical development program, each requiring one-year commitment and specific functional expertise:</p>
+
+<p><strong>Cadet Aerospace Education Officer (1 Year):</strong> Coordinated squadron aerospace curriculum, organized guest speaker events with pilots and aviation professionals, managed educational materials and lesson planning, and ensured cadets met aerospace knowledge requirements for advancement. Developed understanding of aviation principles, space systems, and military aircraft operations.</p>
+
+<p><strong>Cadet Public Affairs Officer (1 Year):</strong> Managed squadron communications and public image. Responsibilities included writing press releases for local media, maintaining squadron social media presence, coordinating photography at events, and liaison with community organizations. Learned professional communication skills and how to represent the organization to external stakeholders.</p>
+
+<p><strong>Cadet Leadership Education Officer (1 Year):</strong> Oversaw leadership training curriculum for junior cadets. Planned and executed leadership exercises, mentored cadets through rank advancement requirements, tracked leadership progression, and ensured training aligned with CAP national standards. This role required teaching leadership principles I was simultaneously learning to apply.</p>
+
+<h4>Operational Leadership Positions</h4>
+<p><strong>Element Leader & Flight Chief:</strong> Supervised small teams of 5-8 cadets in drill, ceremonies, and training activities. Learned foundational leadership skills: delegation, accountability, clear communication, and leading peers. Flight Chief role expanded responsibilities to coordinating multiple elements and managing larger group dynamics.</p>
+
+<p><strong>Color Guard Commander (2+ Years):</strong> Led CAP's ceremonial color guard team presenting the American flag at community events, competitions, and military ceremonies. Commanded performances at veteran memorial services, local government functions, and CAP regional competitions. Responsibilities included:</p>
+<ul>
+  <li>Training team members in precise drill movements and flag etiquette</li>
+  <li>Coordinating logistics for off-site ceremony performances</li>
+  <li>Maintaining uniform standards and professional appearance</li>
+  <li>Representing CAP publicly with discipline and military bearing</li>
+  <li>Competing at regional events, earning recognition for performance quality</li>
+</ul>
+
+<p><strong>Cadet Commander (2+ Years, Including COVID-19 Transition):</strong> Highest cadet leadership position in squadron. Assumed role immediately as COVID-19 pandemic forced transition to virtual operations—unprecedented challenge requiring complete restructuring of traditional in-person training.</p>
+
+<p><em>COVID-19 Virtual Leadership Challenges:</em> Squadron demographics (very young cadets and elderly senior members) made technology adoption difficult. Navigated Zoom platform limitations, maintained cadet engagement without hands-on activities, adapted drill and ceremony training to home environments, and sustained morale during extended isolation. Despite obstacles, maintained squadron activity levels and continued cadet advancement programs. Awarded Commander's Commendation for leadership during this period.</p>
+
+<p><em>Return to In-Person Operations:</em> Led squadron through transition back to normal operations. Rebuilt in-person training routines, re-established facility protocols, integrated new cadets who joined during virtual period, and restored full ceremony and drill capabilities. Continued as Cadet Commander for approximately one additional year, mentoring successor leadership and ensuring continuity.</p>
+
+<h4>Search and Rescue Operations</h4>
+<p>Qualified in two critical SAR roles supporting Oregon Wing emergency services missions:</p>
+
+<p><strong>Mission Radio Operator:</strong> Stationed at mission base coordinating communications between search aircraft, ground teams, and incident command. Responsibilities included logging radio traffic, relaying position reports, maintaining communication schedules, and ensuring all teams checked in safely. Required calm professionalism during high-stress real-world emergencies.</p>
+
+<p><strong>Mission Scanner (Aircrew):</strong> Airborne observer in back seat of CAP search aircraft. Trained in visual search patterns, grid search techniques, and identifying ground signals from altitude. Participated in multiple real-world search missions for lost hikers, downed aircraft, and emergency locator beacon activations. Required sustained visual concentration, effective crew communication, and understanding of search probability calculations.</p>
+
+<h4>Transition to Senior Member (Age 21+)</h4>
+<p>Upon turning 21 and after military enlistment, transitioned from cadet program to senior member (adult volunteer) status. After returning from initial military training, resumed CAP involvement supporting cadet development from mentor perspective:</p>
+<ul>
+  <li>Assisted with meeting planning and execution</li>
+  <li>Organized training events and activities</li>
+  <li>Provided guidance to current cadet leadership based on prior experience</li>
+  <li>Continued SAR qualification as mission scanner for emergency operations</li>
+  <li>Currently hold rank of 1st Lieutenant in senior member program</li>
+</ul>
+
+<h4>Skills and Values Developed</h4>
+<ul>
+  <li><strong>Leadership Under Uncertainty:</strong> Navigating COVID-19 transition taught adaptability and resilience when traditional approaches failed</li>
+  <li><strong>Youth Mentorship:</strong> Teaching and guiding cadets 5-10 years younger developed patience, communication clarity, and teaching ability</li>
+  <li><strong>Ceremony and Protocol:</strong> Color guard experience instilled discipline, attention to detail, and professional bearing</li>
+  <li><strong>Emergency Operations:</strong> SAR missions demonstrated importance of preparation, communication, and calm decision-making in critical situations</li>
+  <li><strong>Organizational Management:</strong> Staff positions taught functional planning, resource coordination, and cross-team collaboration</li>
+  <li><strong>Public Representation:</strong> Representing CAP publicly reinforced importance of professionalism, integrity, and service before self</li>
+</ul>
+
+<h4>Recognition</h4>
+<p>Commander's Commendation Award for exceptional leadership during COVID-19 pandemic transition and sustained squadron operations under unprecedented circumstances.</p>
+{% endcapture %}
+
+{% capture cap_roles %}
+<span class="service-role leadership">Cadet Commander</span>
+<span class="service-role leadership">Color Guard Commander</span>
+<span class="service-role">Mission Scanner</span>
+<span class="service-role">Mission Radio Operator</span>
+<span class="service-role">Leadership Education Officer</span>
+{% endcapture %}
+
+{% capture cap_gallery %}
+<div class="gallery-item">
+  <img src="/img/service/cap-ceremony.jpg" alt="Color Guard Ceremony">
+  <div class="gallery-caption">Color guard presenting at community event</div>
 </div>
+<div class="gallery-item">
+  <img src="/img/service/cap-commander.jpg" alt="As Cadet Commander">
+  <div class="gallery-caption">Leading squadron as Cadet Commander</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/service/cap-aircraft.jpg" alt="SAR Aircraft">
+  <div class="gallery-caption">Mission scanner training in CAP aircraft</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/service/cap-award.jpg" alt="Commander's Commendation">
+  <div class="gallery-caption">Receiving Commander's Commendation</div>
+</div>
+{% endcapture %}
+
+{% include entry-service.html 
+  featured=true
+  title="Civil Air Patrol - Leadership & Search and Rescue"
+  organization="Eugene Composite Squadron, Oregon Wing"
+  dates="High School Junior - Present"
+  location="Eugene, OR"
+  image="/img/service/cap-main.jpg"
+  roles=cap_roles
+  bullet1="Advanced from new cadet to Cadet Major, serving in multiple staff positions including Aerospace Officer, Public Affairs Officer, and Leadership Education Officer"
+  bullet2="Led squadron as Cadet Commander for 2+ years, navigating COVID-19 virtual transition and earning Commander's Commendation for sustained operations under unprecedented challenges"
+  bullet3="Commanded color guard for 2+ years, leading ceremonial performances at community events, veteran memorials, and regional competitions"
+  bullet4="Qualified as Mission Scanner (aircrew) and Mission Radio Operator, participating in real-world search and rescue missions across Oregon"
+  bullet5="Transitioned to senior member (1st Lieutenant) upon turning 21, continuing to mentor cadets and support emergency services operations"
+  impact="Over 5 years of service developing leadership, aviation knowledge, and emergency operations expertise while contributing to youth development and community safety"
+  detail=cap_detail
+  gallery=cap_gallery
+%}
