@@ -1,10 +1,236 @@
 ---
 layout: page
 title: Resume / Contact
-descriptor: Download my resume or get in touch to discuss opportunities.
+descriptor: View my full resume or reach out to discuss opportunities.
 header_image: /img/portfolio/6.jpg
 ---
 
+<!-- Resume Viewer Section -->
 <div class="content-section">
-  <p style="text-align: center; font-size: 18px; color: #666;">This page is under construction. Check back soon!</p>
+  <h2 class="section-header">Resume</h2>
+  <p class="section-intro" style="text-align: center; margin-bottom: 30px;">
+    Browse my complete resume below, or download the PDF for your records.
+  </p>
+  
+  <!-- Download Button Above Resume -->
+  <div style="text-align: center; margin-bottom: 30px;">
+    <a href="/files/Resume_Public.pdf" class="btn btn-primary btn-xl" download style="display: inline-flex; align-items: center; gap: 8px;">
+      <i class="fa fa-download"></i> Download Resume (PDF)
+    </a>
+  </div>
+  
+  <!-- Embedded PDF Viewer -->
+  <div class="resume-embed-container" style="width: 100%; max-width: 900px; margin: 0 auto; border: 2px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <embed 
+      src="/files/Resume_Public.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+      type="application/pdf" 
+      width="100%" 
+      height="1100px"
+      style="display: block;"
+    />
+    
+    <!-- Fallback for browsers/devices that don't support PDF embed -->
+    <div class="pdf-fallback" style="padding: 40px; text-align: center; background-color: #f8f9fa; display: none;">
+      <p style="font-size: 16px; color: #666; margin-bottom: 20px;">
+        <i class="fa fa-file-pdf-o fa-3x" style="color: #F05F40; margin-bottom: 15px;"></i><br>
+        Unable to display PDF in your browser.
+      </p>
+      <a href="/files/Resume_Public.pdf" target="_blank" class="btn btn-primary btn-lg">
+        <i class="fa fa-external-link"></i> Open Resume in New Tab
+      </a>
+    </div>
+  </div>
+  
+  <script>
+    // Detect if PDF embed is not supported and show fallback
+    window.addEventListener('load', function() {
+      var embed = document.querySelector('.resume-embed-container embed');
+      var fallback = document.querySelector('.pdf-fallback');
+      
+      // Check if on mobile device (PDFs often don't embed well on mobile)
+      var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      
+      if (isMobile) {
+        embed.style.display = 'none';
+        fallback.style.display = 'block';
+      }
+    });
+  </script>
 </div>
+
+
+<!-- Contact Information Section -->
+<div class="content-section">
+  <h2 class="section-header">Get In Touch</h2>
+  <p class="section-intro" style="text-align: center; margin-bottom: 40px;">
+    Interested in discussing opportunities? I'm always open to connecting with potential employers and collaborators.
+  </p>
+  
+  <div style="max-width: 700px; margin: 0 auto;">
+    <!-- Contact Cards -->
+    <div class="contact-grid" style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px;">
+      
+      <!-- Email Card -->
+      <div class="contact-card" style="background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #F05F40; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <div style="flex-shrink: 0;">
+            <i class="fa fa-envelope fa-3x" style="color: #F05F40;"></i>
+          </div>
+          <div style="flex-grow: 1;">
+            <h4 style="margin: 0 0 8px 0; font-size: 18px; font-weight: 700; color: #222;">Email</h4>
+            <p style="margin: 0 0 10px 0; font-size: 14px; color: #666;">Primary contact method — I respond within 24 hours</p>
+            <a href="mailto:johnstonperry12345@gmail.com" style="font-size: 16px; font-weight: 600; word-break: break-all;">
+              johnstonperry12345@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Location Card -->
+      <div class="contact-card" style="background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #F05F40; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <div style="flex-shrink: 0;">
+            <i class="fa fa-map-marker fa-3x" style="color: #F05F40;"></i>
+          </div>
+          <div style="flex-grow: 1;">
+            <h4 style="margin: 0 0 8px 0; font-size: 18px; font-weight: 700; color: #222;">Location</h4>
+            <p style="margin: 0; font-size: 16px; color: #444;">Oregon</p>
+            <p style="margin: 5px 0 0 0; font-size: 14px; color: #666;">Open to relocation for the right opportunity</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Phone Note Card -->
+      <div class="contact-card" style="background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #F05F40; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <div style="flex-shrink: 0;">
+            <i class="fa fa-phone fa-3x" style="color: #F05F40;"></i>
+          </div>
+          <div style="flex-grow: 1;">
+            <h4 style="margin: 0 0 8px 0; font-size: 18px; font-weight: 700; color: #222;">Phone</h4>
+            <p style="margin: 0; font-size: 14px; color: #666;">
+              For privacy, my phone number is not publicly listed. Please email me and I will respond with additional contact information within 24 hours.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- LinkedIn Placeholder (commented out until you add it) -->
+      <!--
+      <div class="contact-card" style="background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #F05F40; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <div style="display: flex; align-items: center; gap: 20px;">
+          <div style="flex-shrink: 0;">
+            <i class="fa fa-linkedin-square fa-3x" style="color: #0077B5;"></i>
+          </div>
+          <div style="flex-grow: 1;">
+            <h4 style="margin: 0 0 8px 0; font-size: 18px; font-weight: 700; color: #222;">LinkedIn</h4>
+            <p style="margin: 0 0 10px 0; font-size: 14px; color: #666;">Connect with me professionally</p>
+            <a href="YOUR_LINKEDIN_URL_HERE" target="_blank" style="font-size: 16px; font-weight: 600;">
+              linkedin.com/in/yourprofile
+            </a>
+          </div>
+        </div>
+      </div>
+      -->
+      
+    </div>
+    
+    <!-- Availability Statement -->
+    <div style="background: linear-gradient(135deg, #F05F40 0%, #e04030 100%); color: white; padding: 30px; border-radius: 8px; text-align: center; box-shadow: 0 4px 12px rgba(240, 95, 64, 0.3);">
+      <i class="fa fa-calendar-check-o fa-2x" style="margin-bottom: 15px; opacity: 0.9;"></i>
+      <h3 style="margin: 0 0 10px 0; font-size: 22px; font-weight: 700; color: white;">Availability</h3>
+      <p style="margin: 0; font-size: 17px; font-weight: 500; color: rgba(255,255,255,0.95);">
+        Available for full-time mechanical engineering positions starting June 2026
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Optional: Technical Skills Quick Reference -->
+<div class="content-section" style="background: #f8f9fa; padding: 40px; border-radius: 8px; margin-top: 40px;">
+  <h2 class="section-header" style="text-align: center;">Technical Proficiencies</h2>
+  <p class="section-intro" style="text-align: center; margin-bottom: 30px;">
+    Quick reference of software and tools — see resume above for detailed context
+  </p>
+  
+  <div style="max-width: 900px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
+      
+      <!-- CAD/CAM -->
+      <div>
+        <h4 style="font-size: 16px; font-weight: 700; color: #F05F40; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa fa-cube"></i> CAD / CAM
+        </h4>
+        <ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.8; color: #444;">
+          <li>SolidWorks</li>
+          <li>Fusion 360</li>
+          <li>Mastercam</li>
+          <li>AutoCAD</li>
+        </ul>
+      </div>
+      
+      <!-- Programming -->
+      <div>
+        <h4 style="font-size: 16px; font-weight: 700; color: #F05F40; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa fa-code"></i> Programming
+        </h4>
+        <ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.8; color: #444;">
+          <li>Python</li>
+          <li>MATLAB</li>
+          <li>G-Code (CNC)</li>
+          <li>C/C++</li>
+        </ul>
+      </div>
+      
+      <!-- Manufacturing -->
+      <div>
+        <h4 style="font-size: 16px; font-weight: 700; color: #F05F40; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa fa-cogs"></i> Manufacturing
+        </h4>
+        <ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.8; color: #444;">
+          <li>CNC Machining (Mill/Lathe)</li>
+          <li>Manual Machining</li>
+          <li>Composites Fabrication</li>
+          <li>3D Printing</li>
+        </ul>
+      </div>
+      
+      <!-- Analysis & Simulation -->
+      <div>
+        <h4 style="font-size: 16px; font-weight: 700; color: #F05F40; margin: 0 0 12px 0; display: flex; align-items: center; gap: 8px;">
+          <i class="fa fa-line-chart"></i> Analysis
+        </h4>
+        <ul style="margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.8; color: #444;">
+          <li>FEA (Finite Element Analysis)</li>
+          <li>MATLAB/Simulink</li>
+          <li>Thermal Analysis</li>
+          <li>Controls & Dynamics</li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+<!-- Responsive adjustments -->
+<style>
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr !important;
+    }
+    
+    .resume-embed-container embed {
+      height: 800px !important;
+    }
+    
+    .contact-card {
+      padding: 20px !important;
+    }
+    
+    .contact-card h4 {
+      font-size: 16px !important;
+    }
+  }
+</style>
