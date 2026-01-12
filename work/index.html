@@ -6,6 +6,21 @@ header_image: /img/portfolio/1.jpg
 ---
 
 
+{% capture f15_gallery %}
+<div class="gallery-item">
+  <img src="/img/portfolio/1.jpg" alt="F-15 Avionics Work">
+  <div class="gallery-caption">Avionics systems maintenance on F-15</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/portfolio/1.jpg" alt="F-15 Cockpit Systems">
+  <div class="gallery-caption">Cockpit instrumentation and controls</div>
+</div>
+<div class="gallery-item">
+  <img src="/img/portfolio/1.jpg" alt="F-15 Technical Work">
+  <div class="gallery-caption">Technical troubleshooting and repair</div>
+</div>
+{% endcapture %}
+
 {% include entry-work.html 
   title="F-15 Fighter Aircraft Avionics Technician"
   company="Oregon Air National Guard, 142nd Fighter Wing"
@@ -49,22 +64,10 @@ header_image: /img/portfolio/1.jpg
   <li>Inventory management and supply chain coordination</li>
   <li>Leadership in high-pressure environments with competing demands</li>
 </ul>"
+  gallery=f15_gallery
 %}
 
-{% capture f15_gallery %}
-<div class="gallery-item">
-  <img src="/img/portfolio/1.jpg" alt="F-15 Avionics Work">
-  <div class="gallery-caption">Avionics systems maintenance on F-15</div>
-</div>
-<div class="gallery-item">
-  <img src="/img/portfolio/1.jpg" alt="F-15 Cockpit Systems">
-  <div class="gallery-caption">Cockpit instrumentation and controls</div>
-</div>
-<div class="gallery-item">
-  <img src="/img/portfolio/1.jpg" alt="F-15 Technical Work">
-  <div class="gallery-caption">Technical troubleshooting and repair</div>
-</div>
-{% endcapture %}
+
 
 
 
