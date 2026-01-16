@@ -230,7 +230,7 @@ header_image: /img/portfolio/3.jpg
 
 {% capture blinds_detail %}
 <h4>Project Motivation</h4>
-<p>This project originated from a practical frustration: streetlights and car headlights disrupting sleep, combined with difficulty waking naturally to daylight. Rather than purchasing a commercial smart blind system, I designed a custom solution that integrated multiple sensors, control modes, and user interfaces to provide flexible automation tailored to my specific needs. This project demonstrates how embedded systems can solve real-world problems through thoughtful hardware integration and control logic design.</p>
+<p>This project originated from a practical frustration: streetlights and car headlights disrupting sleep, combined with difficulty waking naturally to daylight. Rather than purchasing an expensive commercial blackout-smart blind system, I designed a custom solution that integrated multiple sensors, control modes, and user interfaces to provide flexible automation tailored to my specific needs. This project demonstrates how embedded systems can solve real-world problems through thoughtful hardware integration and control logic design.</p>
 
 <h4>System Architecture</h4>
 <p>The automated blackout blind system uses an Arduino microcontroller to coordinate multiple subsystems:</p>
@@ -282,7 +282,7 @@ header_image: /img/portfolio/3.jpg
 <p>System has been in daily operation for over a year with high reliability. Sunrise alarm mode successfully replaces traditional audio alarms with gentler, more natural waking. Automatic light tracking maintains desired bedroom darkness during evening hours while allowing daylight entry during day. Manual mode provides override capability for specific needs. The project successfully solved the original problem while providing valuable experience in multi-sensor integration and embedded control logic.</p>
 
 <h4>Future Enhancements</h4>
-<p>Potential improvements include: Wi-Fi connectivity for smartphone control and scheduling, integration with smart home platforms (Home Assistant, Google Home), rotary encoder addition for closed-loop position feedback, motorized tension adjustment to prevent fabric sagging, and weather API integration for predictive light-based control.</p>
+<p>Potential improvements include: Wi-Fi connectivity for smartphone control and scheduling, integration with smart home platforms (Home Assistant, Google Home), and altered tension adjustment to prevent fabric sagging.</p>
 {% endcapture %}
 
 {% capture blinds_tags %}
@@ -311,8 +311,8 @@ header_image: /img/portfolio/3.jpg
 {% include entry-project.html 
   title="Automatic Blackout Blind System"
   category="Academic Project"
-  date="Winter 2024"
-  team="ME 4XX - Instrumentation & Measurement Systems"
+  date="Spring 2025"
+  team="ME 382 - Instrumentation & Measurement Systems"
   image="/img/projects/window-blinds.jpg"
   tags=blinds_tags
   link="https://www.youtube.com/watch?v=EEh0CoQmo_o"
@@ -347,7 +347,7 @@ header_image: /img/portfolio/3.jpg
 <h4>Version 2 - Systematic Redesign</h4>
 <p><strong>Motion System Overhaul:</strong> Replaced threaded rod drives with GT2 timing belt systems. Belts provide smooth, backlash-free motion with minimal friction—ideal for applications without cutting forces (diode laser). Redesigned gantry to use sliding wheel carriages on aluminum extrusion rails, dramatically improving rigidity and precision. New system achieves repeatable positioning well under 1mm, suitable for detailed engraving and accurate cutting.</p>
 
-<p><strong>Electrical System Redesign:</strong> Complete rewiring using shielded cables for all stepper motors, limit switches, and laser control lines. Shields grounded at controller enclosure to drain EMI away from signal conductors. Limit switches reconfigured as normally-open to eliminate false triggers from noise (open circuit can't generate false signal). Power and signal grounds properly separated to prevent ground loops.</p>
+<p><strong>Electrical System Redesign:</strong> Complete rewiring using shielded cables for all stepper motors, limit switches, and laser control lines. Shields grounded at controller enclosure to drain EMI away from signal conductors. Limit switches reconfigured as normally-open to eliminate false triggers from noise (open circuit can't easily generate false signal). Power and signal grounds properly separated to prevent ground loops.</p>
 
 <p><strong>Software Migration:</strong> Abandoned custom code in favor of proven Laser GRBL firmware. GRBL provides mature motion planning, acceleration control, and G-code interpretation with decades of community development and debugging. Paired with LightBurn software for CAM workflow—handles image processing, path generation, and material-specific settings. This combination provides professional-grade control without reinventing foundational CNC software.</p>
 
@@ -356,7 +356,7 @@ header_image: /img/portfolio/3.jpg
 <h4>Technical Specifications (v2)</h4>
 <ul>
   <li><strong>Working Envelope:</strong> 36" × 36" (3' × 3')</li>
-  <li><strong>Laser Module:</strong> Diode laser (specify wattage if known) with PWM power control</li>
+  <li><strong>Laser Module:</strong> Diode laser (40W) with PWM power control</li>
   <li><strong>Motion System:</strong> GT2 belt drive on aluminum extrusion frame with V-wheel carriages</li>
   <li><strong>Controller:</strong> Arduino with CNC shield running Laser GRBL firmware</li>
   <li><strong>CAM Software:</strong> LightBurn for design, path planning, and machine control</li>
@@ -367,7 +367,7 @@ header_image: /img/portfolio/3.jpg
 <h4>Applications & Capabilities</h4>
 <p><strong>Detailed Engraving:</strong> Photographs, logos, and fine artwork on wood, leather, acrylic, and coated metals. Capable of reproducing grayscale images through power modulation and dithering algorithms in LightBurn.</p>
 
-<p><strong>Precision Cutting:</strong> Through-cuts on materials like cardboard, thin plywood, acrylic sheet, and fabric. Large working envelope enables signage, architectural models, and custom packaging prototypes.</p>
+<p><strong>Precision Cutting:</strong> Through-cuts on materials like cardboard, thin plywood, and fabric. Large working envelope enables signage, architectural models, and custom packaging prototypes.</p>
 
 <p><strong>Production Work:</strong> Small-batch manufacturing for custom products—engraved gifts, branded merchandise, prototype parts. Repeatability and automation enable consistent multi-piece production runs.</p>
 
@@ -384,10 +384,10 @@ header_image: /img/portfolio/3.jpg
 </ul>
 
 <h4>Current Status & Future Work</h4>
-<p>Version 2 is fully operational and used regularly for personal projects and small production runs. System demonstrates reliable performance with minimal maintenance requirements. Future enhancements under consideration include: rotary axis for cylindrical engraving (tumblers, pens), camera system for automatic workpiece alignment, air assist for improved cutting and smoke removal, and enclosure with fume extraction for indoor operation safety.</p>
+<p>Version 2 is fully operational and used for personal projects and small production runs. System demonstrates reliable performance with minimal maintenance requirements. Future enhancements under consideration include: rotary axis for cylindrical engraving (tumblers, pens), camera system for automatic workpiece alignment, air assist for improved cutting and smoke removal, and enclosure with fume extraction for indoor operation safety.</p>
 
 <h4>Business Application</h4>
-<p>This laser cutter serves as a key manufacturing tool for my LLC, enabling rapid prototyping, custom fabrication services, and small-batch production without outsourcing. The ability to go from digital design to physical part in minutes provides significant competitive advantage in responsiveness and cost control.</p>
+<p>This laser cutter serves as a manufacturing tool for my LLC, enabling rapid prototyping, custom fabrication services, and small-batch production without outsourcing. The ability to go from digital design to physical part in minutes provides significant competitive advantage in responsiveness and cost control.</p>
 {% endcapture %}
 
 {% capture laser_tags %}
@@ -417,7 +417,7 @@ header_image: /img/portfolio/3.jpg
   image_right=true
   title="3'×3' Diode Laser Cutter/Engraver - V1 & V2"
   category="Personal Manufacturing"
-  date="2022 - 2024"
+  date="2020 - 2021"
   image="/img/projects/laser-cutter-main.jpg"
   tags=laser_tags
   bullet1="Designed and built large-format laser cutter through two complete iterations, learning from v1 mechanical and electrical failures to inform v2 success"
