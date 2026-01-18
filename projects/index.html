@@ -228,6 +228,104 @@ header_image: /img/portfolio/3.jpg
 
 
 
+
+
+
+
+
+
+{% capture website_detail %}
+<h4>Project Motivation</h4>
+<p>Rather than using a generic portfolio template or website builder, I chose to build a custom Jekyll-based site from scratch to have complete control over content structure, design, and functionality. This project demonstrates web development capability beyond typical engineering portfolios while creating a platform optimized for showcasing detailed technical projects with expandable content sections and image galleries.</p>
+
+<h4>Technical Stack</h4>
+<ul>
+  <li><strong>Framework:</strong> Jekyll static site generator with Liquid templating language</li>
+  <li><strong>Hosting:</strong> GitHub Pages with custom domain (perryjjohnston.com)</li>
+  <li><strong>Styling:</strong> Custom SCSS with Bootstrap grid system for responsive layout</li>
+  <li><strong>Version Control:</strong> Git/GitHub for deployment pipeline and content management</li>
+  <li><strong>Icons:</strong> Font Awesome library for visual elements</li>
+</ul>
+
+<h4>Custom Features Developed</h4>
+<p><strong>Expandable Detail Sections:</strong> Built custom JavaScript toggle system allowing each project, work experience, and education entry to have collapsible long-form content. This keeps pages scannable while providing depth for interested readers. Implementation required coordinating Liquid template parameters, CSS transitions, and vanilla JavaScript event handlers.</p>
+
+<p><strong>Photo Gallery System:</strong> Designed reusable gallery component using Liquid capture blocks that can be passed as parameters to include templates. Galleries use responsive CSS grid layout (auto-fit minmax) with hover effects and gradient caption overlays. Required solving Liquid quote-escaping challenges and developing consistent image sizing strategies.</p>
+
+<p><strong>Multi-Template Architecture:</strong> Created separate include templates for different content types (projects, work experience, education, service) with shared styling patterns but unique parameter sets. Each template supports optional features like galleries, external links, tags, and featured highlighting through conditional Liquid logic.</p>
+
+<p><strong>Responsive Design:</strong> Implemented mobile-first responsive layouts with breakpoints at 768px and 992px. Content automatically reflows from multi-column to single-column, images resize appropriately, and navigation collapses on small screens. Tested across desktop, tablet, and mobile viewports.</p>
+
+<p><strong>Resume Integration:</strong> Built custom contact page with embedded PDF viewer (desktop) and mobile fallback. Includes download functionality, contact information cards with Font Awesome icons, and technical proficiencies grid showcasing software skills.</p>
+
+<h4>Technical Challenges Solved</h4>
+<p><strong>Liquid Templating Syntax:</strong> Jekyll's Liquid templating has strict quote handling rules—HTML content with nested quotes must be passed through capture blocks rather than inline strings. Solved this by developing consistent pattern: define content in capture blocks, pass variables without quotes to include statements.</p>
+
+<p><strong>Parameter Passing Complexity:</strong> Include templates with 10+ optional parameters required careful organization. Developed naming conventions and parameter ordering standards to maintain readability. Used featured flags, image positioning toggles, and conditional rendering to maximize template reusability.</p>
+
+<p><strong>CSS Specificity Management:</strong> With styles embedded in each include template, preventing conflicts required careful class naming and scoping strategies. Adopted BEM-inspired naming (entry-type-element) and used direct child selectors to limit cascade scope.</p>
+
+<p><strong>GitHub Pages Deployment:</strong> Learned GitHub Pages build constraints (no custom Jekyll plugins, specific gem versions) and developed workflow around these limitations. Configured CNAME for custom domain, managed DNS settings, and debugged deployment pipeline issues.</p>
+
+<h4>Content Strategy</h4>
+<p>Site architecture emphasizes depth over breadth—each project entry includes expandable detail sections with technical specifications, challenges encountered, solutions implemented, and lessons learned. This approach provides quick-scan bullet points for recruiters while offering comprehensive technical depth for those interested in specific projects. Cross-references link related content across sections (projects ↔ work experience ↔ education) to show connections between experiences.</p>
+
+<h4>Design Decisions</h4>
+<p><strong>Why Jekyll over WordPress/Wix:</strong> Static site generation provides faster load times, better security (no database vulnerabilities), free hosting via GitHub Pages, and version control integration. Markdown + Liquid templating allows content updates without touching design code.</p>
+
+<p><strong>Single-Page Sections:</strong> Each major section (Projects, Work, Education) is a single scrollable page rather than paginated or individual posts. This decision prioritizes comprehensive narrative over discrete entries, allowing readers to see progression and breadth in one view.</p>
+
+<p><strong>Expandable vs. Separate Pages:</strong> Detail sections collapse by default to maintain scannable pages while providing depth on-demand. Alternative approaches (separate project detail pages, modal popups) would fragment the reading experience and require more navigation clicks.</p>
+
+<h4>Skills Demonstrated</h4>
+<ul>
+  <li><strong>Web Development:</strong> HTML5, CSS3/SCSS, JavaScript, responsive design principles</li>
+  <li><strong>Templating Systems:</strong> Liquid syntax, component-based architecture, parameter passing strategies</li>
+  <li><strong>Version Control:</strong> Git workflow, GitHub Pages deployment, branch management</li>
+  <li><strong>UI/UX Design:</strong> Information architecture, visual hierarchy, mobile optimization</li>
+  <li><strong>Technical Writing:</strong> Clear documentation of complex projects, scannable formatting</li>
+  <li><strong>Problem Solving:</strong> Debugging template syntax errors, CSS specificity conflicts, deployment issues</li>
+</ul>
+
+<h4>Ongoing Maintenance</h4>
+<p>Site receives regular content updates as new projects complete and experiences accumulate. Version control through Git enables tracking changes, reverting mistakes, and maintaining clean deployment history. Future enhancements under consideration include search functionality, project filtering by technology/category, and automated build testing.</p>
+{% endcapture %}
+
+{% capture website_tags %}
+<span class="project-tag">Web Development</span>
+<span class="project-tag">Portfolio</span>
+<span class="project-tag">Jekyll</span>
+<span class="project-tag">GitHub Pages</span>
+{% endcapture %}
+
+{% include entry-project.html 
+  title="Portfolio Website - Custom Jekyll Build"
+  category="Web Development"
+  date="2025 - Present"
+  image="/img/projects/website-portfolio.jpg"
+  tags=website_tags
+  link="https://github.com/perryismyname/perryismyname.github.io"
+  bullet1="Built custom portfolio website from scratch using Jekyll static site generator and GitHub Pages hosting"
+  bullet2="Developed reusable Liquid template system with expandable detail sections and photo gallery components"
+  bullet3="Implemented responsive design with mobile-first approach, custom SCSS styling, and multi-breakpoint layouts"
+  bullet4="Solved Liquid templating challenges including quote escaping, parameter passing, and conditional rendering logic"
+  outcome="Fully functional portfolio site demonstrating web development skills and providing comprehensive platform for showcasing engineering projects"
+  detail=website_detail
+%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% capture blinds_detail %}
 <h4>Project Motivation</h4>
 <p>This project originated from a practical frustration: streetlights and car headlights disrupting sleep, combined with difficulty waking naturally to daylight. Rather than purchasing an expensive commercial blackout-smart blind system, I designed a custom solution that integrated multiple sensors, control modes, and user interfaces to provide flexible automation tailored to my specific needs. This project demonstrates how embedded systems can solve real-world problems through thoughtful hardware integration and control logic design.</p>
