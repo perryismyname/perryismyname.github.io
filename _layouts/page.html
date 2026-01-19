@@ -6,6 +6,7 @@
   
 <!-- Slim Page Header -->
   <header class="page-header-slim" style="{% if page.header_image %}background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ page.header_image }}');{% endif %}{% if page.background_position %}background-position: {{ page.background_position }};{% endif %}{% if page.background_position_mobile %}--bg-pos-mobile: {{ page.background_position_mobile }};{% endif %}">
+    <div class="container">
       <h1>{{ page.title }}</h1>
       {% if page.descriptor %}
       <p class="page-descriptor">{{ page.descriptor }}</p>
@@ -28,8 +29,6 @@
     </div>
   </footer>
   
-  {% include scripts.html %}
-
   <style>
   @media (max-width: 768px) {
     .page-header-slim[style*="--bg-pos-mobile"] {
@@ -37,7 +36,10 @@
     }
   }
   </style>
-
+  
+  {% include scripts.html %}
+</body>
+</html>
   
 </body>
 </html>
