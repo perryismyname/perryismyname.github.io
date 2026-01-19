@@ -39,29 +39,13 @@
 </nav>
 
 
-<style>
 @media (max-width: 768px) {
   .navbar-brand {
-    font-size: 14px !important;
-    padding: 15px 10px !important;
+    font-size: 0;
   }
   
-  .navbar-toggle {
-    margin-right: 10px !important;
-    padding: 6px 8px !important;
-  }
-  
-  .navbar-header {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  .navbar-brand:before {
+    content: "Perry Johnston";
+    font-size: 16px;
   }
 }
-
-@media (max-width: 480px) {
-  .navbar-brand {
-    font-size: 12px !important;
-    padding: 15px 8px !important;
-  }
-}
-</style>
