@@ -28,26 +28,29 @@
       <p>Questions about my work? <a href="mailto:{{ site.email }}">Get in touch</a> or <a href="/files/Resume_Public.pdf" download>download my resume</a>.</p>
     </div>
   </footer>
+
+
   
-  <style>
-  @media (max-width: 768px) {
-    .page-header-slim[data-mobile-bg] {
-      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--mobile-bg-url) !important;
-    }
-  }
-  </style>
-  
-  <script>
-  // Set mobile background image from data attribute
+ <script>
+// Set mobile background image from data attribute
+function setMobileBackground() {
   if (window.innerWidth <= 768) {
     var header = document.querySelector('.page-header-slim[data-mobile-bg]');
     if (header) {
       var mobileImg = header.getAttribute('data-mobile-bg');
-      header.style.setProperty('--mobile-bg-url', 'url(' + mobileImg + ')');
-      header.style.backgroundImage = 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + mobileImg + ')';
+      if (mobileImg) {
+        header.style.backgroundImage = 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + mobileImg + ')';
+      }
     }
   }
-  </script>
+}
+
+// Run on page load
+setMobileBackground();
+
+// Re-run on window resize (in case user rotates device)
+window.addEventListener('resize', setMobileBackground);
+</script>
   
   {% include scripts.html %}
 </body>
