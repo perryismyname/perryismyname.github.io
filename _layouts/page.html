@@ -5,7 +5,7 @@
   {% include nav.html %}
   
 <!-- Slim Page Header -->
-  <header class="page-header-slim" style="{% if page.header_image %}background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ page.header_image }}');{% endif %}{% if page.background_position %}background-position: {{ page.background_position }};{% endif %}">
+  <header class="page-header-slim" style="{% if page.header_image %}background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ page.header_image }}');{% endif %}{% if page.background_position %}background-position: {{ page.background_position }};{% endif %}" {% if page.header_image_mobile %}data-mobile-bg="{{ page.header_image_mobile }}"{% endif %}>
     <div class="container">
       <h1>{{ page.title }}</h1>
       {% if page.descriptor %}
@@ -31,13 +31,23 @@
   
   <style>
   @media (max-width: 768px) {
-    {% if page.header_image_mobile %}
-    .page-header-slim {
-      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ page.header_image_mobile }}') !important;
+    .page-header-slim[data-mobile-bg] {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--mobile-bg-url) !important;
     }
-    {% endif %}
   }
   </style>
+  
+  <script>
+  // Set mobile background image from data attribute
+  if (window.innerWidth <= 768) {
+    var header = document.querySelector('.page-header-slim[data-mobile-bg]');
+    if (header) {
+      var mobileImg = header.getAttribute('data-mobile-bg');
+      header.style.setProperty('--mobile-bg-url', 'url(' + mobileImg + ')');
+      header.style.backgroundImage = 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + mobileImg + ')';
+    }
+  }
+  </script>
   
   {% include scripts.html %}
 </body>
