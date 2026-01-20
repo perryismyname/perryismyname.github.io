@@ -5,7 +5,7 @@
   {% include nav.html %}
   
 <!-- Slim Page Header -->
-  <header class="page-header-slim {% if page.background_position_mobile %}has-mobile-bg{% endif %}" style="{% if page.header_image %}background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ page.header_image }}');{% endif %}{% if page.background_position %}background-position: {{ page.background_position }};{% endif %}">
+  <header class="page-header-slim" style="{% if page.header_image %}background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ page.header_image }}');{% endif %}{% if page.background_position %}background-position: {{ page.background_position }};{% endif %}">
     <div class="container">
       <h1>{{ page.title }}</h1>
       {% if page.descriptor %}
@@ -31,9 +31,11 @@
   
   <style>
   @media (max-width: 768px) {
-    .page-header-slim.has-mobile-bg {
-      background-position: center 20% !important;
+    {% if page.header_image_mobile %}
+    .page-header-slim {
+      background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('{{ page.header_image_mobile }}') !important;
     }
+    {% endif %}
   }
   </style>
   
