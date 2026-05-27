@@ -8,10 +8,17 @@ descriptor: Team portfolio showcasing autonomous robotics projects from ROB 456 
 <h4>Project Background</h4>
 <p><strong>Course:</strong> ROB 456 - Cognitive Robotics, Oregon State University, Spring 2026</p>
 <p><strong>Team Members:</strong> Zachary Aszmus, Lucas Dassonville, Perry Johnston, Benjamin Molnar, and Quang Huy Nguyen</p>
-<p><strong>Project Focus:</strong> [Brief description of your team's robotics project focus - what problem you're solving, what autonomous behaviors you're implementing]</p>
+<p>
+  <strong>Project Focus:</strong>
+  The goal of the project is to create two robots that can play a capture the flag style game, 
+  where there are four randomly placed ArUco tag “goals”. Each robot has two goals and scores points by placing the correct color barrels by their associated tags.
+</p>
 
 <h4>Why This Project?</h4>
-<p>[Explain why your team was interested in this topic - what made it compelling? What skills did you want to develop? What real-world problem does it address?]</p>
+<p>
+  We are doing this because we wanted to challenge ourselves with the course content we learned and implemented over the course of the term. 
+  Having four separate goal positions as well as 4 separate goal objectives would keep the project unique.
+</p>
 {% endcapture %}
 
 {% capture week_1_7_content %}
@@ -22,10 +29,13 @@ descriptor: Team portfolio showcasing autonomous robotics projects from ROB 456 
 
 <h5>Key Milestones</h5>
 <ul>
-  <li><strong>Week 1-2:</strong> [Initial setup, environment configuration, early tests]</li>
-  <li><strong>Week 3-4:</strong> [Core functionality development]</li>
-  <li><strong>Week 5-6:</strong> [Integration and testing]</li>
-  <li><strong>Week 7:</strong> [Refinement and optimization]</li>
+  <li><strong>Week 1:</strong> Introduction to the Vex Aim robots and setting up and using the custom environment.</li>
+  <li><strong>Week 2:</strong> Odomotry and custom state machine software</li>
+  <li><strong>Week 3:</strong> Particle filters and localization</li>
+  <li><strong>Week 4:</strong> Kinematics and camera calibration</li>
+  <li><strong>Week 5:</strong> Slam and working with custom GPT Celeste</li>
+  <li><strong>Week 6:</strong> Path Planning and Object Detection</li>
+  <li><strong>Week 7:</strong> Convolutional Neural Networks, working with PyTorch and YOLO</li>
 </ul>
 
 <h5>Early Footage & Documentation</h5>
@@ -39,7 +49,12 @@ descriptor: Team portfolio showcasing autonomous robotics projects from ROB 456 
 <h4>Final Project</h4>
 
 <h5>Project Description</h5>
-<p>[Detailed description of your final project - what autonomous behaviors did you implement? What sensors/algorithms did you use? What was the robot's mission?]</p>
+<p>
+  The project creates two robots that can play a capture the flag style game, where there are four ArUco tag goals. Each robot considers two ArUco tags to be a goal, one for each
+  color barrel, which are orange and blue. Points are scored when a robot picks up and places a barrel at the correct ArUco tag. The robots have the ability to steal from the opposing
+  robot, where it pilots to an opponent's goal, takes a barrel, and brings it to the goal for that color barrel. Success is based on barrel placement success rate and closeness to
+  the correct ArUco tag.
+</p>
 
 <h5>Technical Implementation</h5>
 <ul>
@@ -63,7 +78,6 @@ descriptor: Team portfolio showcasing autonomous robotics projects from ROB 456 
 <p><strong>Main Repository:</strong> <a href="[YOUR_GITHUB_REPO_LINK]" target="_blank">[Repository Name]</a></p>
 <p><em>Contains all software needed to run the final project, including:</em></p>
 <ul>
-  <li>ROS2 packages and nodes</li>
   <li>Launch files and configuration</li>
   <li>Custom algorithms and utilities</li>
   <li>Documentation and setup instructions</li>
