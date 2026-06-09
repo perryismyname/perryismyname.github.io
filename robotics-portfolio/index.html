@@ -1,4 +1,4 @@
----
+Put your HTML text here---
 layout: minimal
 title: Cognitive Robotics Portfolio
 descriptor: Team portfolio showcasing autonomous robotics projects from ROB 421 - Cognitive Robotics
@@ -31,7 +31,7 @@ descriptor: Team portfolio showcasing autonomous robotics projects from ROB 421 
 <h4><strong>Early Development (Weeks 1-8)</strong></h4>
 
 <h5>Lab Work & Initial Testing</h5>
-<p>In our early labs, we got familiar with the vex-aim ecosystem, and learned more general aspects of robotics, like calibrating robots, implementing image processing algorithms, and implementing llms into robotic systems. [Description of early lab experiences - what you learned, what challenges you faced, initial proof-of-concept work]</p>
+<p>In our early labs, we got familiar with the vex-aim ecosystem, and learned more general aspects of robotics, like calibrating robots, implementing image processing algorithms, and implementing llms into robotic systems. </p>
 
 <h5>Key Milestones</h5>
 <ul>
@@ -45,7 +45,7 @@ descriptor: Team portfolio showcasing autonomous robotics projects from ROB 421 
   <li><strong>Week 8:</strong> Transformer Networks, LLMs, and Prompt Engineering</li>
 </ul>
 
-<h5>Early Footage & Documentation</h5>
+<h5>Early Footage</h5>
 <div class="video-container" style="text-align: center;">
   <video width="100%" height="auto" controls style="max-width: 600px; display: inline-block;">
     <source src="/img/robotics-portfolio/Nim-Video.mp4" type="video/mp4">
@@ -71,7 +71,7 @@ descriptor: Team portfolio showcasing autonomous robotics projects from ROB 421 
     AIM_WEBSOCKET_LIBRARY (<a href=https://github.com/touretzkyds/AIM_Websocket_Library>link</a>), 
     vex-aim-tools (<a href=https://github.com/touretzkyds/vex-aim-tools>link</a>) </li>
   <li><strong>Key Algorithms:</strong> Path planning, Object detection, State machines, SLAM</li>
-  <li><strong>Challenges Overcome:</strong> [Technical problems solved during development]</li>
+  <li><strong>Challenges Overcome:</strong> The most difficult part of this project was using the aim-fsm system. Though it made the low level finite-state-machine very easy, the documentation for aim-fsm is very lacking, as well as for the vex-aim tools as well. We also stuggled with the robots localizing and seeing their goal tags.</li>
 </ul>
 
 <h5><strong>Final Demo Video</strong></h5>
@@ -92,7 +92,6 @@ descriptor: Team portfolio showcasing autonomous robotics projects from ROB 421 
 <ul>
   <li>Launch files and configuration</li>
   <li>Custom algorithms and utilities</li>
-  <li>Documentation and setup instructions</li>
 </ul>
 
 <h5>Additional Materials</h5>
@@ -116,7 +115,7 @@ descriptor: Team portfolio showcasing autonomous robotics projects from ROB 421 
 <p><strong>Quang Huy Nguyen:</strong> Picking up barrels, as well as finding which barrels to grab</p>
 
 <h5>Future Improvements</h5>
-<p>[If you had more time, what would you improve or extend? What capabilities would you add?]</p>
+<p>Though these robots are typically able to complete the two minute games, there are a few ways the robots can get stuck in a loop and fail to be effective for the rest of the game. The most common of these issues is losing one of its goal tags. If we had more time, we would make a more robust re-localizing system which it can use if it loses its tag. </p>
 {% endcapture %}
 
 <!-- Main Page Layout -->
